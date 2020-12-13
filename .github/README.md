@@ -10,6 +10,8 @@ Original Gist: https://gist.github.com/schalkburger/a19cd40175ee026f69d0c033b37d
 **Copy** `autoexec.cfg` to the following path:
 `C:\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\cfg`
 
+Alternatively, create a symbolink link to this repository's `autoexec.cfg` for auto updating.
+
 ## Launch options
 
 `-novid +exec autoexec`
