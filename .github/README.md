@@ -55,31 +55,16 @@ To use the **Video Settings**, copy `video.txt` to the following directory and s
 ## Crosshair
 
 ```bash
-crosshair "1"
+cl_crosshairalpha "200"
+cl_crosshaircolor "1"
+cl_crosshairdot "1"
+cl_crosshairgap "-2"
+cl_crosshairsize "2"
 cl_crosshairstyle "4"
-cl_crosshairsize "3"
-cl_crosshairthickness "0"
-cl_crosshairdot "0"
-cl_crosshair_t "0"
-cl_crosshair_drawoutline "0"
-cl_crosshair_outlinethickness "2"
-cl_crosshairgap_useweaponvalue "0"
-cl_crosshairgap "-3"
-cl_fixedcrosshairgap "-2"
 cl_crosshairusealpha "1"
-cl_crosshairalpha "255"
-cl_crosshaircolor "2"
-cl_crosshaircolor_R "255"
-cl_crosshaircolor_G "255"
-cl_crosshaircolor_B "0"
-hud_showtargetid "1"
-cl_crosshair_friendly_warning "1"
+cl_crosshairthickness "0.5"
 cl_crosshair_sniper_width "1"
-cl_crosshair_sniper_show_normal_inaccuracy "0"
-cl_crosshair_dynamic_maxdist_splitratio "0.35"
-cl_crosshair_dynamic_splitalpha_innermod "1"
-cl_crosshair_dynamic_splitalpha_outermod "0.5"
-cl_crosshair_dynamic_splitdist "7"
+cl_crosshair_drawoutline "0"
 ```
 
 ## Binds
