@@ -56,15 +56,16 @@ To use the **Video Settings**, copy `video.txt` to the following directory and s
 
 ```bash
 cl_crosshairalpha "200"
-cl_crosshaircolor "1"
-cl_crosshairdot "1"
-cl_crosshairgap "-2"
-cl_crosshairsize "2"
+cl_crosshaircolor "2"
+cl_crosshairdot "0"
+cl_crosshairgap "-3"
+cl_crosshairsize "1.5"
 cl_crosshairstyle "4"
 cl_crosshairusealpha "1"
 cl_crosshairthickness "0.5"
 cl_crosshair_sniper_width "1"
-cl_crosshair_drawoutline "0"
+cl_crosshair_outlinethickness "1"
+cl_crosshair_drawoutline "1"
 ```
 
 ## Binds
