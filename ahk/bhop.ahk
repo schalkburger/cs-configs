@@ -22,14 +22,14 @@ soundbeep3() {
 	SoundBeep, 80, 350
 }
 
-F4::soundbeep3(), Reload
+F4::Reload, soundbeep3()
 F5::ExitApp
 
 jump() {                                    
 	Send, {Space}
 }
 
-*CapsLock::
+LAlt & W::
 
 BHopOn += 1
 if(BHopOn > 1){                                                                          
