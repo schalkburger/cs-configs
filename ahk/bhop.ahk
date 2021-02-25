@@ -29,7 +29,7 @@ jump() {
 	Send, {Space}
 }
 
-LAlt & W::
+CapsLock::
 
 BHopOn += 1
 if(BHopOn > 1){                                                                          
