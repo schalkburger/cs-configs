@@ -565,12 +565,12 @@ playvol ambient\wind\wind_outdoors_1 1
 playvol ambient\wind\wind_snippet4 1
 playvol ambient\wind\wind_snippet5 1
 playvol ambient\wind\wind_tunnel1 1
-playvol bot\aw_hell
-playvol bot\null
+playvol bot\aw_hell 1
+playvol bot\null 1
 playvol buttons\arena_switch_press_02 1
-playvol buttons\bell1
-playvol buttons\blip1
-playvol buttons\blip2
+playvol buttons\bell1 1
+playvol buttons\blip1 1
+playvol buttons\blip2 1
 playvol buttons\button1 1
 playvol buttons\button10 1
 playvol buttons\button11 1

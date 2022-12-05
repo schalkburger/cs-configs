@@ -14,17 +14,10 @@
 try {
         clear-host
         ""
-        "      ______  ______  ______  ______        "
-        "     /\  ___\/\  ___\/\  ___\/\  __ \       "
-        "     \ \ \___\ \___  \ \ \__ \ \ \/\ \      "
-        "      \ \_____\/\_____\ \_____\ \_____\     "
-        "       \/_____/\/_____/\/_____/\/_____/     "
-        "                                            "
-        "             - Take a deep breath           "
-        "             - Check your posture           "
-        "             - Check your corners           "
-        "             - Check your cursor            "
-        "                                            "
+        "  - Take a deep breath                      "
+        "  - Check your posture                      "
+        "  - Check your corners                      "
+        "  - Check your cursor                       "
         ""
 
         Write-Host "Press any key to play CS...";
@@ -35,7 +28,6 @@ try {
         clear-host
         # Start CSGO
         SetScreenResolution 1280 960
-        Start-Process -FilePath "E:\Portable Apps\Shortcuts\Headphones.lnk"
         Start-Process steam://rungameid/730
         Start-Process -Wait notepad
         # Stop CSGO
@@ -45,7 +37,7 @@ try {
         Write-Host "Stopped playing CS."
 
         # timeout /t 1 /nobreak
-        Start-Sleep 1
+        Start-Sleep 2
         Stop-Process -processname "conhost"
 
         exit 0 # success
