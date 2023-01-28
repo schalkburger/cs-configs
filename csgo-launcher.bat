@@ -1,7 +1,7 @@
 @echo off
-@REM SetScreenResolution 1280 960
-@REM start "" "E:\Portable Apps\Shortcuts\Headphones.lnk"
-@REM start steam://rungameid/730
+SetScreenResolution 1280 960
+start "" "E:\Portable Apps\Shortcuts\Headphones.lnk"
+start steam://rungameid/730
 echo.
 echo Launching Counter-Strike...
 echo.
