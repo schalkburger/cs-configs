@@ -14,30 +14,29 @@
 try {
         clear-host
         ""
-        "  - Take a deep breath                      "
-        "  - Check your posture                      "
-        "  - Check your corners                      "
-        "  - Check your cursor                       "
-        ""
-
         Write-Host "Press any key to play CS...";
         $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
-
-        # (new-object -com shell.application).minimizeall()
-
         clear-host
         # Start CSGO
         SetScreenResolution 1280 960
         Start-Process steam://rungameid/730
-        Start-Process -Wait notepad
+        Write-Host "Take a deep breath...";
+        Write-Host "Check your posture...";
+        Write-Host "Check your corners...";
+        # CSGO Timer
+        $Seconds = 40
+        $EndTime = [datetime]::UtcNow.AddSeconds($Seconds)
+        while (($TimeRemaining = ($EndTime - [datetime]::UtcNow)) -gt 0) {
+          Write-Progress -Activity 'CSGO is launching...' -SecondsRemaining $TimeRemaining.TotalSeconds
+          Start-Sleep 1
+        }
+        Start-Process -WindowStyle "Minimized" -Wait notepad
         # Stop CSGO
         Stop-Process -processname "csgo"
         SetScreenResolution 1920 1080
-
         Write-Host "Stopped playing CS."
-
-        # timeout /t 1 /nobreak
-        Start-Sleep 2
+        # Close terminal
+        Start-Sleep 1
         Stop-Process -processname "conhost"
 
         exit 0 # success
