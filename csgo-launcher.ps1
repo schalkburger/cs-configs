@@ -20,16 +20,11 @@ try {
         # Start CSGO
         SetScreenResolution 1280 960
         Start-Process steam://rungameid/730
+        Write-Host "`n";
         Write-Host "Take a deep breath...";
         Write-Host "Check your posture...";
         Write-Host "Check your corners...";
-        # CSGO Timer
-        $Seconds = 40
-        $EndTime = [datetime]::UtcNow.AddSeconds($Seconds)
-        while (($TimeRemaining = ($EndTime - [datetime]::UtcNow)) -gt 0) {
-          Write-Progress -Activity 'CSGO is launching...' -SecondsRemaining $TimeRemaining.TotalSeconds
-          Start-Sleep 1
-        }
+        Write-Host "`n";
         Start-Process -WindowStyle "Minimized" -Wait notepad
         # Stop CSGO
         Stop-Process -processname "csgo"
