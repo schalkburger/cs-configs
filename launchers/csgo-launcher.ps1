@@ -23,9 +23,19 @@ try {
         Write-Host "`n";
         Write-Host "1. Posture check";
         Write-Host "2. Crosshair placement";
-        Write-Host "3. Util mastery";
+        Write-Host "3. Utility";
         Write-Host "`n";
+
+        $i = 30
+
+        do {
+                Write-Host $i
+                Start-Sleep 1
+                $i--
+        } while ($i -gt 0)
+
         Start-Process -WindowStyle "Minimized" -Wait notepad
+
         # Stop CSGO
         Stop-Process -processname "csgo"
         SetScreenResolution 1920 1080
