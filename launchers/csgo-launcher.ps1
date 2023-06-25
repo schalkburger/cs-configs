@@ -23,10 +23,11 @@ try {
         Write-Host "`n";
         Write-Host "1. Posture check";
         Write-Host "2. Crosshair placement";
-        Write-Host "3. Utility";
+        Write-Host "3. Communication";
+        Write-Host "4. Utility";
         Write-Host "`n";
 
-        $i = 30
+        $i = 35
 
         do {
                 Write-Host $i
