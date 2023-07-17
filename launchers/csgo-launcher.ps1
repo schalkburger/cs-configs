@@ -21,22 +21,13 @@ try {
         SetScreenResolution 1280 960
         Start-Process steam://rungameid/730
         Write-Host "`n";
-        Write-Host "1. Posture check";
-        Write-Host "2. Crosshair placement";
-        Write-Host "3. Communication";
-        Write-Host "4. Utility";
+        Write-Host "1. Check your posture";
+        Write-Host "2. Remember your crosshair placement";
+        Write-Host "3. Communicate with your team";
+        Write-Host "4. Use utility effectively";
         Write-Host "`n";
-
-        $i = 35
-
-        do {
-                Write-Host $i
-                Start-Sleep 1
-                $i--
-        } while ($i -gt 0)
-
+        # Notepad wait
         Start-Process -WindowStyle "Minimized" -Wait notepad
-
         # Stop CSGO
         Stop-Process -processname "csgo"
         SetScreenResolution 1920 1080
