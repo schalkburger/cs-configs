@@ -35,6 +35,7 @@ try {
         # Close terminal
         Start-Sleep 1
         Stop-Process -processname "conhost"
+        Stop-Process -processname "steam"
 
         exit 0 # success
 }
