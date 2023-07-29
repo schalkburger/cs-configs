@@ -21,11 +21,11 @@ try {
         SetScreenResolution 1280 960
         Start-Process steam://rungameid/730
         Write-Host "`n";
-        Write-Host "1. Check your posture";
-        Write-Host "2. Remember your crosshair placement";
-        Write-Host "3. Communicate with your team";
-        Write-Host "4. Use utility effectively";
-        Write-Host "`n";
+        # Write-Host "1. Check your posture";
+        # Write-Host "2. Remember your crosshair placement";
+        # Write-Host "3. Communicate with your team";
+        # Write-Host "4. Use utility effectively";
+        # Write-Host "`n";
         # Notepad wait
         Start-Process -WindowStyle "Minimized" -Wait notepad
         # Stop CSGO
