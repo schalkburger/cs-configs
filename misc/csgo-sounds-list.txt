@@ -6747,355 +6747,355 @@ playvol ui\menu_invalid 1
 playvol ui\mm_success_lets_roll 1
 playvol ui\now-playing-as-counter-terrorist 1
 playvol ui\now-playing-as-terrorist 1
-ui\ps3_menu
-ui\store_item_activated 1
-ui\store_item_purchased 1
-ui\valve_logo_music
-ui\weapon_cant_buy
-vehicles\loud_helicopter_lp_01 1
-vehicles\loud_helicopter_sweeten_lp_01 1
-weapons\auto_semiauto_switch 1
-weapons\clipempty_pistol 1
-weapons\clipempty_rifle 1
-weapons\debris1
-weapons\debris2
-weapons\movement1
-weapons\movement2
-weapons\movement3
-weapons\ak47\ak47-1-distant 1
-weapons\ak47\ak47-1
-weapons\ak47\ak47_boltpull 1
-weapons\ak47\ak47_clipin 1
-weapons\ak47\ak47_clipout 1
-weapons\ak47\ak47_draw 1
-weapons\aug\aug-1-distant 1
-weapons\aug\aug-1
-weapons\aug\aug_boltpull 1
-weapons\aug\aug_boltrelease 1
-weapons\aug\aug_cliphit 1
-weapons\aug\aug_clipin 1
-weapons\aug\aug_clipout 1
-weapons\aug\aug_draw
-weapons\aug\aug_zoom_in 1
-weapons\aug\aug_zoom_out 1
-weapons\awp\awp1-distant 1
-weapons\awp\awp1
-weapons\awp\awp_boltback 1
-weapons\awp\awp_boltforward 1
-weapons\awp\awp_cliphit 1
-weapons\awp\awp_clipin 1
-weapons\awp\awp_clipout 1
-weapons\awp\awp_draw
-weapons\awp\zoom
-weapons\bizon\bizon-1-distant 1
-weapons\bizon\bizon-1
-weapons\bizon\bizon_boltback 1
-weapons\bizon\bizon_boltforward 1
-weapons\bizon\bizon_clipin 1
-weapons\bizon\bizon_clipout 1
-weapons\bizon\bizon_draw 1
-weapons\c4\c4_beep1
-weapons\c4\c4_click
-weapons\c4\c4_disarm
-weapons\c4\c4_draw
-weapons\c4\c4_explode1 1
-weapons\c4\c4_exp_deb1 1
-weapons\c4\c4_exp_deb2 1
-weapons\c4\c4_plant
-weapons\deagle\deagle-1-distant 1
-weapons\deagle\deagle-1 1
-weapons\deagle\de_clipin 1
-weapons\deagle\de_clipout 1
-weapons\deagle\de_draw 1
-weapons\deagle\de_slideback 1
-weapons\deagle\de_slideforward 1
-weapons\decoy\decoy_draw 1
-weapons\decoy\grenade_throw 1
-weapons\decoy\pinpull
-weapons\decoy\pinpull_start 1
-weapons\elite\elite-1-distant 1
-weapons\elite\elite-1
-weapons\elite\elite_clipout 1
-weapons\elite\elite_draw 1
-weapons\elite\elite_leftclipin 1
-weapons\elite\elite_reloadstart 1
-weapons\elite\elite_rightclipin 1
-weapons\elite\elite_sliderelease 1
-weapons\elite\elite_taunt_tap 1
-weapons\famas\famas-1-distant 1
-weapons\famas\famas-1
-weapons\famas\famas_boltback 1
-weapons\famas\famas_boltforward 1
-weapons\famas\famas_cliphit 1
-weapons\famas\famas_clipin 1
-weapons\famas\famas_clipout 1
-weapons\famas\famas_draw 1
-weapons\fiveseven\fiveseven-1-distant 1
-weapons\fiveseven\fiveseven-1 1
-weapons\fiveseven\fiveseven_clipin 1
-weapons\fiveseven\fiveseven_clipout 1
-weapons\fiveseven\fiveseven_draw 1
-weapons\fiveseven\fiveseven_slideback 1
-weapons\fiveseven\fiveseven_sliderelease 1
-weapons\flashbang\flashbang_draw 1
-weapons\flashbang\flashbang_explode1 1
-weapons\flashbang\flashbang_explode1_distant 1
-weapons\flashbang\flashbang_explode2 1
-weapons\flashbang\flashbang_explode2_distant 1
-weapons\flashbang\grenade_hit1 1
-weapons\flashbang\grenade_throw 1
-weapons\flashbang\pinpull 1
-weapons\flashbang\pinpull_start 1
-weapons\fx\nearmiss\bulletltor01 1
-weapons\fx\nearmiss\bulletltor06 1
-weapons\fx\nearmiss\bulletltor07 1
-weapons\fx\nearmiss\bulletltor08 1
-weapons\fx\nearmiss\bulletltor09 1
-weapons\fx\nearmiss\bulletltor10 1
-weapons\fx\nearmiss\bulletltor11 1
-weapons\fx\nearmiss\bulletltor13 1
-weapons\fx\nearmiss\bulletltor14 1
-weapons\fx\rics\ric3
-weapons\fx\rics\ric4
-weapons\fx\rics\ric5
-weapons\fx\tink\shotgun_shell1 1
-weapons\fx\tink\shotgun_shell2 1
-weapons\fx\tink\shotgun_shell3 1
-weapons\g3sg1\g3sg1-1-distant 1
-weapons\g3sg1\g3sg1-1
-weapons\g3sg1\g3sg1_clipin 1
-weapons\g3sg1\g3sg1_clipout 1
-weapons\g3sg1\g3sg1_draw 1
-weapons\g3sg1\g3sg1_slideback 1
-weapons\g3sg1\g3sg1_slideforward 1
-weapons\g3sg1\zoom
-weapons\galilar\galil-1-distant 1
-weapons\galilar\galil-1 1
-weapons\galilar\galil_boltback 1
-weapons\galilar\galil_boltforward 1
-weapons\galilar\galil_clipin 1
-weapons\galilar\galil_clipout 1
-weapons\galilar\galil_draw 1
-weapons\glock18\glock18-1-distant 1
-weapons\glock18\glock18-1 1
-weapons\glock18\glock_clipin 1
-weapons\glock18\glock_clipout 1
-weapons\glock18\glock_draw 1
-weapons\glock18\glock_slideback 1
-weapons\glock18\glock_sliderelease 1
-weapons\hegrenade\beep 1
-weapons\hegrenade\explode3 1
-weapons\hegrenade\explode3_distant 1
-weapons\hegrenade\explode4 1
-weapons\hegrenade\explode4_distant 1
-weapons\hegrenade\explode5 1
-weapons\hegrenade\explode5_distant 1
-weapons\hegrenade\grenade_throw 1
-weapons\hegrenade\he_bounce-1 1
-weapons\hegrenade\he_draw 1
-weapons\hegrenade\pinpull 1
-weapons\hegrenade\pinpull_start 1
-weapons\hkp2000\hkp2000-1-distant 1
-weapons\hkp2000\hkp2000-1 1
-weapons\hkp2000\hkp2000_clipin 1
-weapons\hkp2000\hkp2000_clipout 1
-weapons\hkp2000\hkp2000_draw 1
-weapons\hkp2000\hkp2000_slideback 1
-weapons\hkp2000\hkp2000_sliderelease 1
-weapons\incgrenade\inc_grenade_bounce-1 1
-weapons\incgrenade\inc_grenade_detonate_1 1
-weapons\incgrenade\inc_grenade_detonate_1_distant 1
-weapons\incgrenade\inc_grenade_detonate_2 1
-weapons\incgrenade\inc_grenade_detonate_2_distant 1
-weapons\incgrenade\inc_grenade_detonate_3 1
-weapons\incgrenade\inc_grenade_detonate_3_distant 1
-weapons\incgrenade\inc_grenade_detonate_swt_01 1
-weapons\incgrenade\inc_grenade_draw 1
-weapons\incgrenade\inc_grenade_throw 1
-weapons\incgrenade\pinpull 1
-weapons\incgrenade\pinpull_start 1
-weapons\m249\m249-1-distant 1
-weapons\m249\m249-1
-weapons\m249\m249_boxin 1
-weapons\m249\m249_boxout 1
-weapons\m249\m249_chain 1
-weapons\m249\m249_coverdown 1
-weapons\m249\m249_coverup 1
-weapons\m249\m249_draw 1
-weapons\m249\m249_pump 1
-weapons\m4a1\m4a1-1-distant 1
-weapons\m4a1\m4a1-1-single-distant 1
-weapons\m4a1\m4a1-1-single 1
-weapons\m4a1\m4a1-1
-weapons\m4a1\m4a1_boltback 1
-weapons\m4a1\m4a1_boltforward 1
-weapons\m4a1\m4a1_clipin 1
-weapons\m4a1\m4a1_clipout 1
-weapons\m4a1\m4a1_draw 1
-weapons\m4a1\m4a1_silencer_off 1
-weapons\m4a1\m4a1_silencer_on 1
-weapons\m4a1\m4a1_silencer_screw_1 1
-weapons\m4a1\m4a1_silencer_screw_2 1
-weapons\m4a1\m4a1_silencer_screw_3 1
-weapons\m4a1\m4a1_silencer_screw_4 1
-weapons\m4a1\m4a1_silencer_screw_5 1
-weapons\m4a1\m4a1_silencer_screw_off_end 1
-weapons\m4a1\m4a1_silencer_screw_on_start 1
-weapons\m4a1\m4a1_unsil-1-distant 1
-weapons\m4a1\m4a1_unsil-1 1
-weapons\mac10\mac10-1-distant 1
-weapons\mac10\mac10-1
-weapons\mac10\mac10_boltback 1
-weapons\mac10\mac10_boltforward 1
-weapons\mac10\mac10_clipin 1
-weapons\mac10\mac10_clipout 1
-weapons\mac10\mac10_draw 1
-weapons\mag7\mag7-1-distant 1
-weapons\mag7\mag7-1
-weapons\mag7\mag7_clipin 1
-weapons\mag7\mag7_clipout 1
-weapons\mag7\mag7_draw 1
-weapons\mag7\mag7_insertshell 1
-weapons\mag7\mag7_pump_back 1
-weapons\mag7\mag7_pump_forward 1
-weapons\molotov\fire_idle_loop_1 1
-weapons\molotov\fire_ignite_1 1
-weapons\molotov\fire_ignite_2 1
-weapons\molotov\fire_ignite_4 1
-weapons\molotov\fire_ignite_5 1
-weapons\molotov\fire_loop_1 1
-weapons\molotov\fire_loop_fadeout_01 1
-weapons\molotov\grenade_throw 1
-weapons\molotov\molotov_detonate_1 1
-weapons\molotov\molotov_detonate_1_distant 1
-weapons\molotov\molotov_detonate_2 1
-weapons\molotov\molotov_detonate_2_distant 1
-weapons\molotov\molotov_detonate_3 1
-weapons\molotov\molotov_detonate_3_distant 1
-weapons\molotov\molotov_detonate_swt_01 1
-weapons\molotov\molotov_draw 1
-weapons\molotov\molotov_extinguish 1
-weapons\mp7\mp7-1-distant 1
-weapons\mp7\mp7-1
-weapons\mp7\mp7_clipin 1
-weapons\mp7\mp7_clipout 1
-weapons\mp7\mp7_draw
-weapons\mp7\mp7_slideback 1
-weapons\mp7\mp7_slideforward 1
-weapons\mp9\mp9-1-distant 1
-weapons\mp9\mp9-1
-weapons\mp9\mp9_boltback 1
-weapons\mp9\mp9_boltforward 1
-weapons\mp9\mp9_clipin 1
-weapons\mp9\mp9_clipout 1
-weapons\mp9\mp9_draw
-weapons\negev\negev-1-distant 1
-weapons\negev\negev-1
-weapons\negev\negev_boxin 1
-weapons\negev\negev_boxout 1
-weapons\negev\negev_chain 1
-weapons\negev\negev_coverdown 1
-weapons\negev\negev_coverup 1
-weapons\negev\negev_draw 1
-weapons\negev\negev_pump 1
-weapons\nova\nova-1-distant 1
-weapons\nova\nova-1
-weapons\nova\nova_draw 1
-weapons\nova\nova_insertshell 1
-weapons\nova\nova_pump 1
-weapons\p250\p250-1-distant 1
-weapons\p250\p250-1
-weapons\p250\p250_clipin 1
-weapons\p250\p250_clipout 1
-weapons\p250\p250_draw 1
-weapons\p250\p250_slideback 1
-weapons\p250\p250_sliderelease 1
-weapons\p90\p90-1-distant 1
-weapons\p90\p90-1
-weapons\p90\p90_boltback 1
-weapons\p90\p90_boltforward 1
-weapons\p90\p90_cliphit 1
-weapons\p90\p90_clipin 1
-weapons\p90\p90_clipout 1
-weapons\p90\p90_cliprelease 1
-weapons\p90\p90_draw
-weapons\sawedoff\sawedoff-1-distant 1
-weapons\sawedoff\sawedoff-1 1
-weapons\sawedoff\sawedoff_draw 1
-weapons\sawedoff\sawedoff_insertshell 1
-weapons\sawedoff\sawedoff_pump 1
-weapons\scar20\scar20_boltback 1
-weapons\scar20\scar20_boltforward 1
-weapons\scar20\scar20_clipin 1
-weapons\scar20\scar20_clipout 1
-weapons\scar20\scar20_cliptouch 1
-weapons\scar20\scar20_draw 1
-weapons\scar20\scar20_unsil-1-distant 1
-weapons\scar20\scar20_unsil-1 1
-weapons\scar20\zoom
-weapons\sg556\sg556-1-distant 1
-weapons\sg556\sg556-1
-weapons\sg556\sg556_boltback 1
-weapons\sg556\sg556_boltforward 1
-weapons\sg556\sg556_cliphit 1
-weapons\sg556\sg556_clipin 1
-weapons\sg556\sg556_clipout 1
-weapons\sg556\sg556_draw 1
-weapons\sg556\sg556_zoom_in 1
-weapons\sg556\sg556_zoom_out 1
-weapons\smokegrenade\grenade_hit1 1
-weapons\smokegrenade\grenade_throw 1
-weapons\smokegrenade\pinpull 1
-weapons\smokegrenade\pinpull_start 1
-weapons\smokegrenade\sg_explode 1
-weapons\smokegrenade\sg_explode_distant 1
-weapons\smokegrenade\smokegrenade_draw 1
-weapons\ssg08\ssg08-1-distant 1
-weapons\ssg08\ssg08-1
-weapons\ssg08\ssg08_boltback 1
-weapons\ssg08\ssg08_boltforward 1
-weapons\ssg08\ssg08_cliphit 1
-weapons\ssg08\ssg08_clipin 1
-weapons\ssg08\ssg08_clipout 1
-weapons\ssg08\ssg08_draw 1
-weapons\ssg08\zoom
-weapons\taser\taser_draw 1
-weapons\taser\taser_hit 1
-weapons\taser\taser_shoot 1
-weapons\tec9\tec9-1-distant 1
-weapons\tec9\tec9-1
-weapons\tec9\tec9_boltpull 1
-weapons\tec9\tec9_boltrelease 1
-weapons\tec9\tec9_clipin 1
-weapons\tec9\tec9_clipout 1
-weapons\tec9\tec9_draw 1
-weapons\ump45\ump45-1-distant 1
-weapons\ump45\ump45-1
-weapons\ump45\ump45_boltback 1
-weapons\ump45\ump45_boltforward 1
-weapons\ump45\ump45_clipin 1
-weapons\ump45\ump45_clipout 1
-weapons\ump45\ump45_draw 1
-weapons\usp\usp1-distant 1
-weapons\usp\usp1
-weapons\usp\usp_clipin 1
-weapons\usp\usp_clipout 1
-weapons\usp\usp_draw
-weapons\usp\usp_silencer_off 1
-weapons\usp\usp_silencer_on 1
-weapons\usp\usp_silencer_screw1 1
-weapons\usp\usp_silencer_screw2 1
-weapons\usp\usp_silencer_screw3 1
-weapons\usp\usp_silencer_screw4 1
-weapons\usp\usp_silencer_screw5 1
-weapons\usp\usp_silencer_screw_off_end 1
-weapons\usp\usp_silencer_screw_on_start 1
-weapons\usp\usp_slideback 1
-weapons\usp\usp_slideback2 1
-weapons\usp\usp_sliderelease 1
-weapons\usp\usp_unsil-1-distant 1
-weapons\usp\usp_unsil-1 1
-weapons\xm1014\xm1014-1-distant 1
-weapons\xm1014\xm1014-1 1
-weapons\xm1014\xm1014_draw 1
-weapons\xm1014\xm1014_insertshell 1
+playvol ui\ps3_menu
+playvol ui\store_item_activated 1
+playvol ui\store_item_purchased 1
+playvol ui\valve_logo_music
+playvol ui\weapon_cant_buy
+playvol vehicles\loud_helicopter_lp_01 1
+playvol vehicles\loud_helicopter_sweeten_lp_01 1
+playvol weapons\auto_semiauto_switch 1
+playvol weapons\clipempty_pistol 1
+playvol weapons\clipempty_rifle 1
+playvol weapons\debris1
+playvol weapons\debris2
+playvol weapons\movement1
+playvol weapons\movement2
+playvol weapons\movement3
+playvol weapons\ak47\ak47-1-distant 1
+playvol weapons\ak47\ak47-1
+playvol weapons\ak47\ak47_boltpull 1
+playvol weapons\ak47\ak47_clipin 1
+playvol weapons\ak47\ak47_clipout 1
+playvol weapons\ak47\ak47_draw 1
+playvol weapons\aug\aug-1-distant 1
+playvol weapons\aug\aug-1
+playvol weapons\aug\aug_boltpull 1
+playvol weapons\aug\aug_boltrelease 1
+playvol weapons\aug\aug_cliphit 1
+playvol weapons\aug\aug_clipin 1
+playvol weapons\aug\aug_clipout 1
+playvol weapons\aug\aug_draw
+playvol weapons\aug\aug_zoom_in 1
+playvol weapons\aug\aug_zoom_out 1
+playvol weapons\awp\awp1-distant 1
+playvol weapons\awp\awp1
+playvol weapons\awp\awp_boltback 1
+playvol weapons\awp\awp_boltforward 1
+playvol weapons\awp\awp_cliphit 1
+playvol weapons\awp\awp_clipin 1
+playvol weapons\awp\awp_clipout 1
+playvol weapons\awp\awp_draw
+playvol weapons\awp\zoom
+playvol weapons\bizon\bizon-1-distant 1
+playvol weapons\bizon\bizon-1
+playvol weapons\bizon\bizon_boltback 1
+playvol weapons\bizon\bizon_boltforward 1
+playvol weapons\bizon\bizon_clipin 1
+playvol weapons\bizon\bizon_clipout 1
+playvol weapons\bizon\bizon_draw 1
+playvol weapons\c4\c4_beep1
+playvol weapons\c4\c4_click
+playvol weapons\c4\c4_disarm
+playvol weapons\c4\c4_draw
+playvol weapons\c4\c4_explode1 1
+playvol weapons\c4\c4_exp_deb1 1
+playvol weapons\c4\c4_exp_deb2 1
+playvol weapons\c4\c4_plant
+playvol weapons\deagle\deagle-1-distant 1
+playvol weapons\deagle\deagle-1 1
+playvol weapons\deagle\de_clipin 1
+playvol weapons\deagle\de_clipout 1
+playvol weapons\deagle\de_draw 1
+playvol weapons\deagle\de_slideback 1
+playvol weapons\deagle\de_slideforward 1
+playvol weapons\decoy\decoy_draw 1
+playvol weapons\decoy\grenade_throw 1
+playvol weapons\decoy\pinpull
+playvol weapons\decoy\pinpull_start 1
+playvol weapons\elite\elite-1-distant 1
+playvol weapons\elite\elite-1
+playvol weapons\elite\elite_clipout 1
+playvol weapons\elite\elite_draw 1
+playvol weapons\elite\elite_leftclipin 1
+playvol weapons\elite\elite_reloadstart 1
+playvol weapons\elite\elite_rightclipin 1
+playvol weapons\elite\elite_sliderelease 1
+playvol weapons\elite\elite_taunt_tap 1
+playvol weapons\famas\famas-1-distant 1
+playvol weapons\famas\famas-1
+playvol weapons\famas\famas_boltback 1
+playvol weapons\famas\famas_boltforward 1
+playvol weapons\famas\famas_cliphit 1
+playvol weapons\famas\famas_clipin 1
+playvol weapons\famas\famas_clipout 1
+playvol weapons\famas\famas_draw 1
+playvol weapons\fiveseven\fiveseven-1-distant 1
+playvol weapons\fiveseven\fiveseven-1 1
+playvol weapons\fiveseven\fiveseven_clipin 1
+playvol weapons\fiveseven\fiveseven_clipout 1
+playvol weapons\fiveseven\fiveseven_draw 1
+playvol weapons\fiveseven\fiveseven_slideback 1
+playvol weapons\fiveseven\fiveseven_sliderelease 1
+playvol weapons\flashbang\flashbang_draw 1
+playvol weapons\flashbang\flashbang_explode1 1
+playvol weapons\flashbang\flashbang_explode1_distant 1
+playvol weapons\flashbang\flashbang_explode2 1
+playvol weapons\flashbang\flashbang_explode2_distant 1
+playvol weapons\flashbang\grenade_hit1 1
+playvol weapons\flashbang\grenade_throw 1
+playvol weapons\flashbang\pinpull 1
+playvol weapons\flashbang\pinpull_start 1
+playvol weapons\fx\nearmiss\bulletltor01 1
+playvol weapons\fx\nearmiss\bulletltor06 1
+playvol weapons\fx\nearmiss\bulletltor07 1
+playvol weapons\fx\nearmiss\bulletltor08 1
+playvol weapons\fx\nearmiss\bulletltor09 1
+playvol weapons\fx\nearmiss\bulletltor10 1
+playvol weapons\fx\nearmiss\bulletltor11 1
+playvol weapons\fx\nearmiss\bulletltor13 1
+playvol weapons\fx\nearmiss\bulletltor14 1
+playvol weapons\fx\rics\ric3
+playvol weapons\fx\rics\ric4
+playvol weapons\fx\rics\ric5
+playvol weapons\fx\tink\shotgun_shell1 1
+playvol weapons\fx\tink\shotgun_shell2 1
+playvol weapons\fx\tink\shotgun_shell3 1
+playvol weapons\g3sg1\g3sg1-1-distant 1
+playvol weapons\g3sg1\g3sg1-1
+playvol weapons\g3sg1\g3sg1_clipin 1
+playvol weapons\g3sg1\g3sg1_clipout 1
+playvol weapons\g3sg1\g3sg1_draw 1
+playvol weapons\g3sg1\g3sg1_slideback 1
+playvol weapons\g3sg1\g3sg1_slideforward 1
+playvol weapons\g3sg1\zoom
+playvol weapons\galilar\galil-1-distant 1
+playvol weapons\galilar\galil-1 1
+playvol weapons\galilar\galil_boltback 1
+playvol weapons\galilar\galil_boltforward 1
+playvol weapons\galilar\galil_clipin 1
+playvol weapons\galilar\galil_clipout 1
+playvol weapons\galilar\galil_draw 1
+playvol weapons\glock18\glock18-1-distant 1
+playvol weapons\glock18\glock18-1 1
+playvol weapons\glock18\glock_clipin 1
+playvol weapons\glock18\glock_clipout 1
+playvol weapons\glock18\glock_draw 1
+playvol weapons\glock18\glock_slideback 1
+playvol weapons\glock18\glock_sliderelease 1
+playvol weapons\hegrenade\beep 1
+playvol weapons\hegrenade\explode3 1
+playvol weapons\hegrenade\explode3_distant 1
+playvol weapons\hegrenade\explode4 1
+playvol weapons\hegrenade\explode4_distant 1
+playvol weapons\hegrenade\explode5 1
+playvol weapons\hegrenade\explode5_distant 1
+playvol weapons\hegrenade\grenade_throw 1
+playvol weapons\hegrenade\he_bounce-1 1
+playvol weapons\hegrenade\he_draw 1
+playvol weapons\hegrenade\pinpull 1
+playvol weapons\hegrenade\pinpull_start 1
+playvol weapons\hkp2000\hkp2000-1-distant 1
+playvol weapons\hkp2000\hkp2000-1 1
+playvol weapons\hkp2000\hkp2000_clipin 1
+playvol weapons\hkp2000\hkp2000_clipout 1
+playvol weapons\hkp2000\hkp2000_draw 1
+playvol weapons\hkp2000\hkp2000_slideback 1
+playvol weapons\hkp2000\hkp2000_sliderelease 1
+playvol weapons\incgrenade\inc_grenade_bounce-1 1
+playvol weapons\incgrenade\inc_grenade_detonate_1 1
+playvol weapons\incgrenade\inc_grenade_detonate_1_distant 1
+playvol weapons\incgrenade\inc_grenade_detonate_2 1
+playvol weapons\incgrenade\inc_grenade_detonate_2_distant 1
+playvol weapons\incgrenade\inc_grenade_detonate_3 1
+playvol weapons\incgrenade\inc_grenade_detonate_3_distant 1
+playvol weapons\incgrenade\inc_grenade_detonate_swt_01 1
+playvol weapons\incgrenade\inc_grenade_draw 1
+playvol weapons\incgrenade\inc_grenade_throw 1
+playvol weapons\incgrenade\pinpull 1
+playvol weapons\incgrenade\pinpull_start 1
+playvol weapons\m249\m249-1-distant 1
+playvol weapons\m249\m249-1
+playvol weapons\m249\m249_boxin 1
+playvol weapons\m249\m249_boxout 1
+playvol weapons\m249\m249_chain 1
+playvol weapons\m249\m249_coverdown 1
+playvol weapons\m249\m249_coverup 1
+playvol weapons\m249\m249_draw 1
+playvol weapons\m249\m249_pump 1
+playvol weapons\m4a1\m4a1-1-distant 1
+playvol weapons\m4a1\m4a1-1-single-distant 1
+playvol weapons\m4a1\m4a1-1-single 1
+playvol weapons\m4a1\m4a1-1
+playvol weapons\m4a1\m4a1_boltback 1
+playvol weapons\m4a1\m4a1_boltforward 1
+playvol weapons\m4a1\m4a1_clipin 1
+playvol weapons\m4a1\m4a1_clipout 1
+playvol weapons\m4a1\m4a1_draw 1
+playvol weapons\m4a1\m4a1_silencer_off 1
+playvol weapons\m4a1\m4a1_silencer_on 1
+playvol weapons\m4a1\m4a1_silencer_screw_1 1
+playvol weapons\m4a1\m4a1_silencer_screw_2 1
+playvol weapons\m4a1\m4a1_silencer_screw_3 1
+playvol weapons\m4a1\m4a1_silencer_screw_4 1
+playvol weapons\m4a1\m4a1_silencer_screw_5 1
+playvol weapons\m4a1\m4a1_silencer_screw_off_end 1
+playvol weapons\m4a1\m4a1_silencer_screw_on_start 1
+playvol weapons\m4a1\m4a1_unsil-1-distant 1
+playvol weapons\m4a1\m4a1_unsil-1 1
+playvol weapons\mac10\mac10-1-distant 1
+playvol weapons\mac10\mac10-1
+playvol weapons\mac10\mac10_boltback 1
+playvol weapons\mac10\mac10_boltforward 1
+playvol weapons\mac10\mac10_clipin 1
+playvol weapons\mac10\mac10_clipout 1
+playvol weapons\mac10\mac10_draw 1
+playvol weapons\mag7\mag7-1-distant 1
+playvol weapons\mag7\mag7-1
+playvol weapons\mag7\mag7_clipin 1
+playvol weapons\mag7\mag7_clipout 1
+playvol weapons\mag7\mag7_draw 1
+playvol weapons\mag7\mag7_insertshell 1
+playvol weapons\mag7\mag7_pump_back 1
+playvol weapons\mag7\mag7_pump_forward 1
+playvol weapons\molotov\fire_idle_loop_1 1
+playvol weapons\molotov\fire_ignite_1 1
+playvol weapons\molotov\fire_ignite_2 1
+playvol weapons\molotov\fire_ignite_4 1
+playvol weapons\molotov\fire_ignite_5 1
+playvol weapons\molotov\fire_loop_1 1
+playvol weapons\molotov\fire_loop_fadeout_01 1
+playvol weapons\molotov\grenade_throw 1
+playvol weapons\molotov\molotov_detonate_1 1
+playvol weapons\molotov\molotov_detonate_1_distant 1
+playvol weapons\molotov\molotov_detonate_2 1
+playvol weapons\molotov\molotov_detonate_2_distant 1
+playvol weapons\molotov\molotov_detonate_3 1
+playvol weapons\molotov\molotov_detonate_3_distant 1
+playvol weapons\molotov\molotov_detonate_swt_01 1
+playvol weapons\molotov\molotov_draw 1
+playvol weapons\molotov\molotov_extinguish 1
+playvol weapons\mp7\mp7-1-distant 1
+playvol weapons\mp7\mp7-1
+playvol weapons\mp7\mp7_clipin 1
+playvol weapons\mp7\mp7_clipout 1
+playvol weapons\mp7\mp7_draw
+playvol weapons\mp7\mp7_slideback 1
+playvol weapons\mp7\mp7_slideforward 1
+playvol weapons\mp9\mp9-1-distant 1
+playvol weapons\mp9\mp9-1
+playvol weapons\mp9\mp9_boltback 1
+playvol weapons\mp9\mp9_boltforward 1
+playvol weapons\mp9\mp9_clipin 1
+playvol weapons\mp9\mp9_clipout 1
+playvol weapons\mp9\mp9_draw
+playvol weapons\negev\negev-1-distant 1
+playvol weapons\negev\negev-1
+playvol weapons\negev\negev_boxin 1
+playvol weapons\negev\negev_boxout 1
+playvol weapons\negev\negev_chain 1
+playvol weapons\negev\negev_coverdown 1
+playvol weapons\negev\negev_coverup 1
+playvol weapons\negev\negev_draw 1
+playvol weapons\negev\negev_pump 1
+playvol weapons\nova\nova-1-distant 1
+playvol weapons\nova\nova-1
+playvol weapons\nova\nova_draw 1
+playvol weapons\nova\nova_insertshell 1
+playvol weapons\nova\nova_pump 1
+playvol weapons\p250\p250-1-distant 1
+playvol weapons\p250\p250-1
+playvol weapons\p250\p250_clipin 1
+playvol weapons\p250\p250_clipout 1
+playvol weapons\p250\p250_draw 1
+playvol weapons\p250\p250_slideback 1
+playvol weapons\p250\p250_sliderelease 1
+playvol weapons\p90\p90-1-distant 1
+playvol weapons\p90\p90-1
+playvol weapons\p90\p90_boltback 1
+playvol weapons\p90\p90_boltforward 1
+playvol weapons\p90\p90_cliphit 1
+playvol weapons\p90\p90_clipin 1
+playvol weapons\p90\p90_clipout 1
+playvol weapons\p90\p90_cliprelease 1
+playvol weapons\p90\p90_draw
+playvol weapons\sawedoff\sawedoff-1-distant 1
+playvol weapons\sawedoff\sawedoff-1 1
+playvol weapons\sawedoff\sawedoff_draw 1
+playvol weapons\sawedoff\sawedoff_insertshell 1
+playvol weapons\sawedoff\sawedoff_pump 1
+playvol weapons\scar20\scar20_boltback 1
+playvol weapons\scar20\scar20_boltforward 1
+playvol weapons\scar20\scar20_clipin 1
+playvol weapons\scar20\scar20_clipout 1
+playvol weapons\scar20\scar20_cliptouch 1
+playvol weapons\scar20\scar20_draw 1
+playvol weapons\scar20\scar20_unsil-1-distant 1
+playvol weapons\scar20\scar20_unsil-1 1
+playvol weapons\scar20\zoom
+playvol weapons\sg556\sg556-1-distant 1
+playvol weapons\sg556\sg556-1
+playvol weapons\sg556\sg556_boltback 1
+playvol weapons\sg556\sg556_boltforward 1
+playvol weapons\sg556\sg556_cliphit 1
+playvol weapons\sg556\sg556_clipin 1
+playvol weapons\sg556\sg556_clipout 1
+playvol weapons\sg556\sg556_draw 1
+playvol weapons\sg556\sg556_zoom_in 1
+playvol weapons\sg556\sg556_zoom_out 1
+playvol weapons\smokegrenade\grenade_hit1 1
+playvol weapons\smokegrenade\grenade_throw 1
+playvol weapons\smokegrenade\pinpull 1
+playvol weapons\smokegrenade\pinpull_start 1
+playvol weapons\smokegrenade\sg_explode 1
+playvol weapons\smokegrenade\sg_explode_distant 1
+playvol weapons\smokegrenade\smokegrenade_draw 1
+playvol weapons\ssg08\ssg08-1-distant 1
+playvol weapons\ssg08\ssg08-1
+playvol weapons\ssg08\ssg08_boltback 1
+playvol weapons\ssg08\ssg08_boltforward 1
+playvol weapons\ssg08\ssg08_cliphit 1
+playvol weapons\ssg08\ssg08_clipin 1
+playvol weapons\ssg08\ssg08_clipout 1
+playvol weapons\ssg08\ssg08_draw 1
+playvol weapons\ssg08\zoom
+playvol weapons\taser\taser_draw 1
+playvol weapons\taser\taser_hit 1
+playvol weapons\taser\taser_shoot 1
+playvol weapons\tec9\tec9-1-distant 1
+playvol weapons\tec9\tec9-1
+playvol weapons\tec9\tec9_boltpull 1
+playvol weapons\tec9\tec9_boltrelease 1
+playvol weapons\tec9\tec9_clipin 1
+playvol weapons\tec9\tec9_clipout 1
+playvol weapons\tec9\tec9_draw 1
+playvol weapons\ump45\ump45-1-distant 1
+playvol weapons\ump45\ump45-1
+playvol weapons\ump45\ump45_boltback 1
+playvol weapons\ump45\ump45_boltforward 1
+playvol weapons\ump45\ump45_clipin 1
+playvol weapons\ump45\ump45_clipout 1
+playvol weapons\ump45\ump45_draw 1
+playvol weapons\usp\usp1-distant 1
+playvol weapons\usp\usp1
+playvol weapons\usp\usp_clipin 1
+playvol weapons\usp\usp_clipout 1
+playvol weapons\usp\usp_draw
+playvol weapons\usp\usp_silencer_off 1
+playvol weapons\usp\usp_silencer_on 1
+playvol weapons\usp\usp_silencer_screw1 1
+playvol weapons\usp\usp_silencer_screw2 1
+playvol weapons\usp\usp_silencer_screw3 1
+playvol weapons\usp\usp_silencer_screw4 1
+playvol weapons\usp\usp_silencer_screw5 1
+playvol weapons\usp\usp_silencer_screw_off_end 1
+playvol weapons\usp\usp_silencer_screw_on_start 1
+playvol weapons\usp\usp_slideback 1
+playvol weapons\usp\usp_slideback2 1
+playvol weapons\usp\usp_sliderelease 1
+playvol weapons\usp\usp_unsil-1-distant 1
+playvol weapons\usp\usp_unsil-1 1
+playvol weapons\xm1014\xm1014-1-distant 1
+playvol weapons\xm1014\xm1014-1 1
+playvol weapons\xm1014\xm1014_draw 1
+playvol weapons\xm1014\xm1014_insertshell 1

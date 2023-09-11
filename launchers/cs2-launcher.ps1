@@ -18,18 +18,18 @@ try {
         $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
         clear-host
         # Start CSGO
-        # SetScreenResolution 1440 1080
+        SetScreenResolution 1440 1080
         Start-Process steam://launch/730/Dialog
-        # MultiMonitorTool /LoadConfig "E:\GitHub\csgo-configs\launchers\monitors-cs.cfg"
+        MultiMonitorTool /LoadConfig "E:\GitHub\csgo-configs\launchers\monitors-cs2.cfg"
         Write-Host "`n";
         # Notepad wait
-        # Start-Process -WindowStyle "Minimized" -Wait notepad
+        Start-Process -WindowStyle "Minimized" -Wait notepad
         # Stop CSGO
         Stop-Process -processname "cs2"
-        # SetScreenResolution 1920 1080
+        SetScreenResolution 1920 1080
         Write-Host "Stopped playing CS2."
         # Close terminal
-        # Start-Sleep 1
+        Start-Sleep 1
         # Stop-Process -processname "conhost"
 
         exit 0 # success
