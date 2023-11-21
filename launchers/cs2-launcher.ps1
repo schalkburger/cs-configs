@@ -18,9 +18,9 @@ try {
         $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
         clear-host
         # Start CSGO
-        SetScreenResolution 1440 1080
+        SetScreenResolution 1280 960
         Start-Process steam://launch/730/Dialog
-        MultiMonitorTool /LoadConfig "E:\GitHub\csgo-configs\launchers\monitors-cs2.cfg"
+        MultiMonitorTool /LoadConfig "E:\GitHub\cs-configs\launchers\monitors-cs2.cfg"
         Write-Host "`n";
         # Notepad wait
         Start-Process -WindowStyle "Minimized" -Wait notepad
