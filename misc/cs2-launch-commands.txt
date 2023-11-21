@@ -1,0 +1,1 @@
+-condebug -console -dev -devcontent -height 1080 -high -mainthreadpriority 2 -nojoy -set_power_qos_disable -sse4 -threads 8 -usePriorityBoost -width 1920 +exec ./autoexec.cfg;
