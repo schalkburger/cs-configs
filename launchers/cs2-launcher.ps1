@@ -20,7 +20,7 @@ try {
         # Start CSGO
         SetScreenResolution 1280 960
         Start-Process steam://launch/730/Dialog
-        MultiMonitorTool /LoadConfig "E:\GitHub\cs-configs\launchers\monitors-cs2.cfg"
+        MultiMonitorTool /LoadConfig "E:\GitHub\cs-configs\launchers\monitors-cs2-1280x960.cfg"
         Write-Host "`n";
         # Notepad wait
         Start-Process -WindowStyle "Minimized" -Wait notepad
