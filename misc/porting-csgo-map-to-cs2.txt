@@ -1,0 +1,4 @@
+- Running Command: source1import -retail -nop4 -nop4sync -usebsp -src1gameinfodir "E:\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo" -src1contentdir "D:\Mapping\aim_map" -s2addon "port_test" -game csgo maps\aim_map.vmf
+--------------------------------
+
+python import_map_community.py "E:\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo" "D:\Mapping\aim_map" "E:\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo" port_test aim_map -usebsp
