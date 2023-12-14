@@ -23,7 +23,8 @@ try {
         MultiMonitorTool /LoadConfig "E:\GitHub\cs-configs\launchers\monitors-cs2-1280x960.cfg"
         Write-Host "`n";
         # Notepad wait
-        Start-Process -WindowStyle "Minimized" -Wait notepad
+        # Start-Process -WindowStyle "Minimized" -Wait notepad
+        Start-Process -WindowStyle "Minimized" -Wait "C:\Program Files\WindowsApps\Microsoft.WindowsAlarms_11.2309.5.0_x64__8wekyb3d8bbwe\Time.exe"
         # Stop CSGO
         Stop-Process -processname "cs2"
         SetScreenResolution 1920 1080
