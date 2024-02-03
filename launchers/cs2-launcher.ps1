@@ -20,8 +20,10 @@ try {
         SetScreenResolution 1280 960
         Start-Sleep 2
         Start-Process steam://launch/730/Dialog
-        New-BurntToastNotification -AppLogo "E:\Apps\Windows Apps\Custom Icons\cs2.png" -Text "Launching Counter-Strike 2",
-        'Counter-Strike 2'
+        New-BurntToastNotification -AppLogo "E:\Apps\Windows Apps\Custom Icons\cs2.png" -Text "Launching Counter-Strike 2...", '1. Take a deep breath
+        2. Check your posture
+        3. Check your corners
+        4. Check your cursor placement'
         # MultiMonitorTool /LoadConfig "E:\GitHub\cs-configs\launchers\monitors-cs2-1280x960.cfg"
         Write-Host "`n";
         # Notepad wait
