@@ -17,7 +17,7 @@ try {
         # Write-Host "Press any key to derank...";
         # $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
         # Start CSGO
-        SetScreenResolution 1440 1080
+        SetScreenResolution 1920 1080
         Start-Sleep 2
         Start-Process steam://launch/730/Dialog
         New-BurntToastNotification -AppLogo "E:\Apps\Windows Apps\Custom Icons\cs2.png" -Text "Launching Counter-Strike 2...", 'Counter-Strike 2'
