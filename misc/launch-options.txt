@@ -1,0 +1,1 @@
+-threads 9 -sdl_displayindex 1
