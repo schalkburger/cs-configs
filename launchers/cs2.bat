@@ -117,7 +117,7 @@ robocopy "$env:USRLOCALCSGO\cfg/" "$env:USRLOCAL\cfg/" $env:M_CONFIG $env:U_CONF
 #:: force resolution if set in the script or via game launch options
 $vc = Get-WmiObject -class "Win32_VideoController"
 " native   = $($vc.CurrentHorizontalResolution) x $($vc.CurrentVerticalResolution) @$($vc.CurrentRefreshRate)Hz "
-$force = $false
+$force = $0
 if ($video_w -eq 0 -and $video_h -eq 0) {
   $lo = (gc "$env:CLOUD\config\localconfig.vdf") -join "`n"
   $lo = (($lo -split '\n\s{5}"' + $env:APPID + '"\n\s{5}{\n')[1] -split '\n\s{5}}\n')[0]
@@ -129,7 +129,7 @@ if ($video_w -eq 0 -and $video_h -eq 0) {
 if ($video_w -gt 0 -and $video_h -gt 0) {
   $video.defaultres = $video_w;       " width    = $($video.defaultres)"
   $video.defaultresheight = $video_h; " height   = $($video.defaultresheight)"
-  $force = $true
+  $force = $1
 } else {
   $video.defaultres = $vc.CurrentHorizontalResolution
   $video.defaultresheight = $vc.CurrentVerticalResolution
@@ -163,25 +163,25 @@ if (test-path $video_config) {
 
 #:: export steam userdata configs to %gameroot%\cfg\cloud.cfg - then can exec cloud to restore missing settings
 sc "$env:GAMEROOT\cfg\cloud.cfg" "// steam cloud settings from $env:K_CONFIG & $env:U_CONFIG & $env:M_CONFIG`r`n" -force -ea 0
-$exec_cloud = $false
+$exec_cloud = $0
 $keys_vcfg = "$env:USRLOCAL\cfg\$env:K_CONFIG"; $cfg = new-object System.Text.StringBuilder
 if (test-path $keys_vcfg) {
   gc $keys_vcfg |foreach { $l = $_ -split '"'; if ($l.count -eq 5) { # -and $l[3] -ne '<unbound>'
   	$cfg.Append('bind "')>''; $cfg.Append($l[1])>''; $cfg.Append('" "')>''; $cfg.Append($l[3])>''
 	$cfg.AppendLine('" | grep %%')>'' } }
-  if ($cfg.length -gt 0) { ac -Literal "$env:GAMEROOT\cfg\cloud.cfg" -Value $cfg.ToString(); $exec_cloud = $true }
+  if ($cfg.length -gt 0) { ac -Literal "$env:GAMEROOT\cfg\cloud.cfg" -Value $cfg.ToString(); $exec_cloud = $1 }
 }
 $user_vcfg = "$env:USRLOCAL\cfg\$env:U_CONFIG"; $cfg = new-object System.Text.StringBuilder
 if (test-path $user_vcfg) {
   gc $user_vcfg |foreach { $l = $_ -split '"'; if ($l.count -eq 5) {
   	$cfg.Append($l[1])>''; $cfg.Append(' "')>''; $cfg.Append($l[3])>''; $cfg.AppendLine('"')>'' } }
-  if ($cfg.length -gt 0) { ac -Literal "$env:GAMEROOT\cfg\cloud.cfg" -Value $cfg.ToString(); $exec_cloud = $true }
+  if ($cfg.length -gt 0) { ac -Literal "$env:GAMEROOT\cfg\cloud.cfg" -Value $cfg.ToString(); $exec_cloud = $1 }
 }
 $machine_vcfg = "$env:USRLOCAL\cfg\$env:M_CONFIG"; $cfg = new-object System.Text.StringBuilder
 if (test-path $machine_vcfg) {
   gc $machine_vcfg |foreach { $l = $_ -split '"'; if ($l.count -eq 5) {
     $cfg.Append($l[1].Split('$')[0])>''; $cfg.Append(' "')>''; $cfg.Append($l[3])>''; $cfg.AppendLine('"')>'' } }
-  if ($cfg.length -gt 0) { ac -Literal "$env:GAMEROOT\cfg\cloud.cfg" -Value $cfg.ToString(); $exec_cloud = $true }
+  if ($cfg.length -gt 0) { ac -Literal "$env:GAMEROOT\cfg\cloud.cfg" -Value $cfg.ToString(); $exec_cloud = $1 }
 }
 ac -Literal "$env:GAMEROOT\cfg\cloud.cfg" -Value "execifexists autoexec.cfg";
 if ($exec_cloud -and $set_cfg -eq 1) { $steam_options += " +exec_async cloud"}
@@ -292,10 +292,10 @@ namespace VirtualDesktop
 		[DllImport("api-ms-win-core-winrt-string-l1-1-0.dll", CallingConvention = CallingConvention.StdCall)]
 		private static extern int WindowsCreateString([MarshalAs(UnmanagedType.LPWStr)] string sourceString, int length, [Out] IntPtr hstring);
 
-		[DllImport("api-ms-win-core-winrt-string-l1-1-0.dll", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
+		[DllImport("api-ms-win-core-winrt-string-l1-1-0.dll", CallingConvention = CallingConvention.StdCall, ExactSpelling = 1)]
 		private static extern int WindowsDeleteString(IntPtr hstring);
 
-		[DllImport("api-ms-win-core-winrt-string-l1-1-0.dll", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, CharSet = CharSet.Unicode)]
+		[DllImport("api-ms-win-core-winrt-string-l1-1-0.dll", CallingConvention = CallingConvention.StdCall, ExactSpelling = 1, CharSet = CharSet.Unicode)]
 		private static extern IntPtr WindowsGetStringRawBuffer(HString hString, IntPtr length);
 
 		public void Dispose()
@@ -794,11 +794,11 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 		private static extern int RegOpenKeyEx(UIntPtr hKey, string subKey, int ulOptions, int samDesired, out UIntPtr hkResult);
 
 		// read registry value
-		[DllImport("advapi32.dll", SetLastError=true)]
+		[DllImport("advapi32.dll", SetLastError=1)]
 		private static extern uint RegQueryValueEx(UIntPtr hKey, string lpValueName, int lpReserved, ref int lpType, IntPtr lpData, ref int lpcbData);
 
 		// close registry key
-		[DllImport("advapi32.dll", SetLastError=true)]
+		[DllImport("advapi32.dll", SetLastError=1)]
 		private static extern int RegCloseKey(UIntPtr hKey);
 
 		// get window handle of current console window (even if powershell started in cmd)
@@ -964,7 +964,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 		}
 
 		public static bool HasDesktopNameFromIndex(int index)
-		{ // return true is desktop is named or false if it has no name
+		{ // return 1 is desktop is named or 0 if it has no name
 			Guid guid = DesktopManager.GetDesktop(index).GetId();
 
 			// read desktop name in registry
@@ -976,9 +976,9 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 
 			// name found?
 			if (string.IsNullOrEmpty(desktopName))
-				return false;
+				return 0;
 			else
-				return true;
+				return 1;
 		}
 
 $(if ($OSBuild -ge 22000) {@"
@@ -1089,7 +1089,7 @@ $(if ($OSBuild -eq 20348) {@"
 $(if (($OSBuild -ge 22000) -And ($OSBuild -lt 22621)) {@"
 		public static void RemoveAll()
 		{ // remove all desktops but visible
-			DesktopManager.VirtualDesktopManagerInternal.SetDesktopIsPerMonitor(true);
+			DesktopManager.VirtualDesktopManagerInternal.SetDesktopIsPerMonitor(1);
 		}
 
 		public void Move(int index)
@@ -1161,7 +1161,7 @@ $(if ($OSBuild -ge 22000) {@"
 "@ })
 
 		public bool IsVisible
-		{ // return true if this desktop is the current displayed one
+		{ // return 1 if this desktop is the current displayed one
 $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 			get { return object.ReferenceEquals(ivd, DesktopManager.VirtualDesktopManagerInternal.GetCurrentDesktop()); }
 "@ } else {@"
@@ -1181,11 +1181,11 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 
 			if ((DesktopThreadId != 0) && (ForegroundThreadId != 0) && (ForegroundThreadId != CurrentThreadId))
 			{
-				AttachThreadInput(DesktopThreadId, CurrentThreadId, true);
-				AttachThreadInput(ForegroundThreadId, CurrentThreadId, true);
+				AttachThreadInput(DesktopThreadId, CurrentThreadId, 1);
+				AttachThreadInput(ForegroundThreadId, CurrentThreadId, 1);
 				SetForegroundWindow(new IntPtr(wi.Handle));
-				AttachThreadInput(ForegroundThreadId, CurrentThreadId, false);
-				AttachThreadInput(DesktopThreadId, CurrentThreadId, false);
+				AttachThreadInput(ForegroundThreadId, CurrentThreadId, 0);
+				AttachThreadInput(DesktopThreadId, CurrentThreadId, 0);
 			}
 
 $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
@@ -1264,17 +1264,17 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 		}
 
 		public bool HasWindow(IntPtr hWnd)
-		{ // return true if window is on this desktop
+		{ // return 1 if window is on this desktop
 			if (hWnd == IntPtr.Zero) throw new ArgumentNullException();
 			Guid id = DesktopManager.VirtualDesktopManager.GetWindowDesktopId(hWnd);
 			if ((id.CompareTo(AppOnAllDesktops) == 0) || (id.CompareTo(WindowOnAllDesktops) == 0))
-				return true;
+				return 1;
 			else
 				return ivd.GetId() == id;
 		}
 
 		public static bool IsWindowPinned(IntPtr hWnd)
-		{ // return true if window is pinned to all desktops
+		{ // return 1 if window is pinned to all desktops
 			if (hWnd == IntPtr.Zero) throw new ArgumentNullException();
 			return DesktopManager.VirtualDesktopPinnedApps.IsViewPinned(hWnd.GetApplicationView());
 		}
@@ -1300,7 +1300,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 		}
 
 		public static bool IsApplicationPinned(IntPtr hWnd)
-		{ // return true if application for window is pinned to all desktops
+		{ // return 1 if application for window is pinned to all desktops
 			if (hWnd == IntPtr.Zero) throw new ArgumentNullException();
 			return DesktopManager.VirtualDesktopPinnedApps.IsAppIdPinned(DesktopManager.GetAppId(hWnd));
 		}
@@ -1333,16 +1333,16 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 		private static List<WindowInformation> WindowInformationList = new List<WindowInformation>();
 
 		// enumerate windows
-		[DllImport("User32.dll", SetLastError = true)]
+		[DllImport("User32.dll", SetLastError = 1)]
 		[return: MarshalAs(UnmanagedType.Bool)]
 		private static extern bool EnumWindows(CallBackPtr lpEnumFunc, IntPtr lParam);
 
 		// get window title length
-		[DllImport("User32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+		[DllImport("User32.dll", CharSet = CharSet.Auto, SetLastError = 1)]
 		private static extern int GetWindowTextLength(IntPtr hWnd);
 
 		// get window title
-		[DllImport("User32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+		[DllImport("User32.dll", CharSet = CharSet.Auto, SetLastError = 1)]
 		private static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
 
 		// callback function for window enumeration
@@ -1355,7 +1355,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 				if (GetWindowText((IntPtr)hWnd, sb, sb.Capacity) > 0)
 				{ WindowInformationList.Add(new WindowInformation {Handle = hWnd, Title = sb.ToString()}); }
 			}
-			return true;
+			return 1;
 		}
 
 		// get list of all windows with title
@@ -1457,7 +1457,7 @@ if ($OSBuild -ge 22000)
 				Number = $I
 				Name = [VirtualDesktop.Desktop]::DesktopNameFromIndex($I)
 				Wallpaper = [VirtualDesktop.Desktop]::DesktopWallpaperFromIndex($I)
-				Visible = if ([VirtualDesktop.Desktop]::FromDesktop([VirtualDesktop.Desktop]::Current) -eq $I) { $TRUE } else { $FALSE }
+				Visible = if ([VirtualDesktop.Desktop]::FromDesktop([VirtualDesktop.Desktop]::Current) -eq $I) { $1 } else { $0 }
 			}
 		}
 		return $DesktopList
@@ -1496,7 +1496,7 @@ else
 			$DesktopList += [PSCustomObject]@{
 				Number = $I
 				Name = [VirtualDesktop.Desktop]::DesktopNameFromIndex($I)
-				Visible = if ([VirtualDesktop.Desktop]::FromDesktop([VirtualDesktop.Desktop]::Current) -eq $I) { $TRUE } else { $FALSE }
+				Visible = if ([VirtualDesktop.Desktop]::FromDesktop([VirtualDesktop.Desktop]::Current) -eq $I) { $1 } else { $0 }
 			}
 		}
 
@@ -1581,7 +1581,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 	if ($Desktop -is [VirtualDesktop.Desktop])
 	{
@@ -1667,7 +1667,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 	if ($NULL -eq $Desktop)
 	{
@@ -1812,7 +1812,7 @@ Updated: 2020/06/27
 #>
 	[OutputType([VirtualDesktop.Desktop])]
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Index)
+	Param([Parameter(ValueFromPipeline = $1)] $Index)
 
 	if ($NULL -eq $Index)
 	{
@@ -1889,7 +1889,7 @@ Updated: 2021/02/28
 #>
 	[OutputType([INT32])]
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 	if ($NULL -eq $Desktop)
 	{
@@ -1967,7 +1967,7 @@ Created: 2020/06/27
 Updated: 2021/02/28
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 	if ($NULL -eq $Desktop)
 	{
@@ -2064,7 +2064,7 @@ Created: 2020/06/27
 Updated: 2021/10/18
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop, [Parameter(ValueFromPipeline = $FALSE)] $Name, [SWITCH]$PassThru)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop, [Parameter(ValueFromPipeline = $0)] $Name, [SWITCH]$PassThru)
 
 	if ($NULL -eq $Name) { $Name = "" }
 	if ($NULL -eq $Desktop) { $Desktop = [VirtualDesktop.Desktop]::Current }
@@ -2169,7 +2169,7 @@ if ($OSBuild -ge 22000)
 	Created: 2021/10/18
 	#>
 		[Cmdletbinding()]
-		Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop, [Parameter(ValueFromPipeline = $FALSE)] $Path, [SWITCH]$PassThru)
+		Param([Parameter(ValueFromPipeline = $1)] $Desktop, [Parameter(ValueFromPipeline = $0)] $Path, [SWITCH]$PassThru)
 
 		if ($NULL -eq $Desktop) { $Desktop = [VirtualDesktop.Desktop]::Current }
 
@@ -2261,7 +2261,7 @@ if ($OSBuild -ge 22000)
 	Created: 2021/10/17
 	#>
 		[Cmdletbinding()]
-		Param([Parameter(ValueFromPipeline = $TRUE)] $Path)
+		Param([Parameter(ValueFromPipeline = $1)] $Path)
 
 		if ([STRING]::IsNullOrEmpty($Path))
 		{ Write-Error "Wallpaper path is missing" }
@@ -2308,7 +2308,7 @@ Updated: 2020/06/27
 #>
 	[OutputType([VirtualDesktop.Desktop])]
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($Hwnd -is [IntPtr])
 	{
@@ -2367,7 +2367,7 @@ Updated: 2020/06/27
 #>
 	[OutputType([BOOLEAN])]
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 	if ($Desktop -is [VirtualDesktop.Desktop])
 	{
@@ -2405,7 +2405,7 @@ Updated: 2020/06/27
 				Write-Error "Parameter -Desktop has to be a desktop object, an integer or a string"
 			}
 		}
-		return $FALSE
+		return $0
 	}
 }
 
@@ -2445,7 +2445,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 	if ($NULL -eq $Desktop)
 	{
@@ -2529,7 +2529,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 	if ($NULL -eq $Desktop)
 	{
@@ -2610,7 +2610,7 @@ if ($OSBuild -ge 22000)
 	Created: 2021/10/17
 	#>
 		[Cmdletbinding()]
-		Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+		Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 		if ($NULL -eq $Desktop)
 		{
@@ -2667,7 +2667,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $FALSE)] $Desktop, [Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $0)] $Desktop, [Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($NULL -eq $Desktop)
 	{
@@ -2752,7 +2752,7 @@ Created: 2019/02/13
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Desktop)
+	Param([Parameter(ValueFromPipeline = $1)] $Desktop)
 
 	if ($NULL -eq $Desktop)
 	{
@@ -2846,7 +2846,7 @@ Updated: 2020/06/27
 #>
 	[OutputType([BOOLEAN])]
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $FALSE)] $Desktop, [Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $0)] $Desktop, [Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($Hwnd -is [IntPtr])
 	{
@@ -2905,7 +2905,7 @@ Updated: 2020/06/27
 	}
 
 	Write-Error "Parameters -Desktop and -Hwnd have to be a desktop object and an IntPtr/integer pair"
-	return $FALSE
+	return $0
 }
 
 
@@ -2938,7 +2938,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($Hwnd -is [IntPtr])
 	{
@@ -2989,7 +2989,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($Hwnd -is [IntPtr])
 	{
@@ -3041,7 +3041,7 @@ Updated: 2020/06/27
 #>
 	[OutputType([BOOLEAN])]
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($Hwnd -is [IntPtr])
 	{
@@ -3058,7 +3058,7 @@ Updated: 2020/06/27
 		else
 		{
 			Write-Error "Parameter -Hwnd has to be an IntPtr or an integer"
-			return $FALSE
+			return $0
 		}
 	}
 }
@@ -3093,7 +3093,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($Hwnd -is [IntPtr])
 	{
@@ -3144,7 +3144,7 @@ Created: 2017/05/08
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($Hwnd -is [IntPtr])
 	{
@@ -3196,7 +3196,7 @@ Updated: 2020/06/27
 #>
 	[OutputType([BOOLEAN])]
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Hwnd)
+	Param([Parameter(ValueFromPipeline = $1)] $Hwnd)
 
 	if ($Hwnd -is [IntPtr])
 	{
@@ -3213,7 +3213,7 @@ Updated: 2020/06/27
 		else
 		{
 			Write-Error "Parameter -Hwnd has to be an IntPtr or an integer"
-			return $FALSE
+			return $0
 		}
 	}
 }
@@ -3336,7 +3336,7 @@ Created: 2019/09/04
 Updated: 2020/06/27
 #>
 	[Cmdletbinding()]
-	Param([Parameter(ValueFromPipeline = $TRUE)] $Title)
+	Param([Parameter(ValueFromPipeline = $1)] $Title)
 
 	if ($Title -eq "*")
 	{
