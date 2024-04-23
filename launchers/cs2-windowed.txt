@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Steam\steam.exe" -applaunch 730 -window -sw -console -insecure -condebug -conclearlog -w 1600 -h 900
