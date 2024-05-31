@@ -520,40 +520,6 @@
 " Benchmark 4x3 Low + CMAA2 + Boost player contrast OFF  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-[Console] "                                     =============================================================================================                                     "
-[Console] "                                     =        ==       ====      ===  ====  ==        =====  =====  ====  ==        ==  =======  =                                     "
-[Console] "                                     =  ========  ====  ==  ====  ==  ====  ==  ==========    ====  ====  ==  ========   ======  =                                     "
-[Console] "                                     =  ========  ====  ==  ====  ==  ====  ==  =========  ==  ===  ====  ==  ========    =====  =                                     "
-[Console] "                                     =  ========  ====  ===  =======  ====  ==  ========  ====  ==  ====  ==  ========  ==  ===  =                                     "
-[Console] "                                     =      ====       ======  =====        ==      ====  ====  ==   ==   ==      ====  ===  ==  =                                     "
-[Console] "                                     =  ========  =============  ===  ====  ==  ========        ===  ==  ===  ========  ====  =  =                                     "
-[Console] "                                     =  ========  ========  ====  ==  ====  ==  ========  ====  ===  ==  ===  ========  =====    =                                     "
-[Console] "                                     =  ========  ========  ====  ==  ====  ==  ========  ====  ====    ====  ========  ======   =                                     "
-[Console] "                                     =  ========  =========      ===  ====  ==        ==  ====  =====  =====        ==  =======  =                                     "
-[Console] "                                     =============================================================================================                                     "
-[Console] "                  ==================================================================================================================================                   "
-[Console] "                  ===     ====      ======   ==========      ====        ==  =======  ====     ===  ====  ==  =====  =====  =====       ===  ====  =                   "
-[Console] "                  ==  ===  ==  ====  ===   =   ========  ===  ===  ========   ======  ===  ===  ==  ====  ==   ===   ====    ====  ====  ==  ===  ==                   "
-[Console] "                  =  ========  ====  ==   ===   =======  ====  ==  ========    =====  ==  ========  ====  ==  =   =  ===  ==  ===  ====  ==  ==  ===                   "
-[Console] "                  =  =========  ============   ========  ===  ===  ========  ==  ===  ==  ========  ====  ==  == ==  ==  ====  ==  ===   ==  =  ====                   "
-[Console] "                  =  ===========  =========   =========      ====      ====  ===  ==  ==  ========        ==  =====  ==  ====  ==      ====     ====                   "
-[Console] "                  =  =============  ======   ==========  ===  ===  ========  ====  =  ==  ========  ====  ==  =====  ==        ==  ====  ==  ==  ===                   "
-[Console] "                  =  ========  ====  ====   ===========  ====  ==  ========  =====    ==  ========  ====  ==  =====  ==  ====  ==  ====  ==  ===  ==                   "
-[Console] "                  ==  ===  ==  ====  ===   ============  ===  ===  ========  ======   ===  ===  ==  ====  ==  =====  ==  ====  ==  ====  ==  ====  =                   "
-[Console] "                  ===     ====      ===        ========      ====        ==  =======  ====     ===  ====  ==  =====  ==  ====  ==  ====  ==  ====  =                   "
-[Console] "                  ==================================================================================================================================                   "
-[Console] "                  >>>>>>>>>>>>>>>>>>>>>>>>>                     fpsheaven.com || twitter.com/frequencycs                    <<<<<<<<<<<<<<<<<<<<<<<<                   "
-[Console] "                                                                                                                                                                       "
-[Console] "                                                       ######  #     #       #    #     #  #####  ####### #                                                            "
-[Console] "                                                       #     #  #   #       # #   ##    # #     # #       #                                                            "
-[Console] "                                                       #     #   # #       #   #  # #   # #       #       #                                                            "
-[Console] "                                                       ######     #       #     # #  #  # #  #### #####   #                                                            "
-[Console] "                                                       #     #    #       ####### #   # # #     # #       #                                                            "
-[Console] "                                                       #     #    #       #     # #    ## #     # #       #                                                            "
-[Console] "                                                       ######     #       #     # #     #  #####  ####### #######                                                      "
-[Console] "                                                                                                                                                                       "
-[Console] "                  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>      steamcommunity.com/id/AnnGell88 || twitter.com/Angel_foxxo      <<<<<<<<<<<<<<<<<<<<<<<<<<<<<                   "
-[Console] "                                                                                                                                                                       "
 [Console] Disconnecting in order to print performance results in:
 [Console] 3
 [Console] 2
@@ -586,5 +552,279 @@
 [VProf] LatchAndSaveLastSimulationValuesForInterpolationList   0.03   0.19     7280   0.11   0.23
 [VProf]                                                Magic   0.00   0.00      330   0.11   0.47
 [VProf]                                       SoundOperators   0.00   0.00       12   0.11   0.20
+[VProf]
+[VProf] VProfLite stopped.
+
+
+
+------------
+
+" Darkharden CS2 "
+
+[Console] Disconnecting in order to print performance results in:
+[Console] 3
+[Console] 2
+[Console] 1
+[Console] Enabling flag 'donotecho' on channel 'Console'.
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 25155 frames.  (1861 frames excluded from analysis.)
+[VProf] FPS: Avg=219.8, P1=102.6
+[VProf]
+[VProf]                                                       All frames         Active frames
+[VProf]                                                         Avg    P99        N    Avg    P99
+[VProf] ---------------------------------------------------- ------ ------   ------ ------ ------
+[VProf]                                           FrameTotal   4.55   9.74    25155   4.55   9.74
+[VProf]                                       Frame Boundary   1.51   2.96    25155   1.51   2.96
+[VProf]                                    Client Simulation   0.91   1.98    25155   0.91   1.98
+[VProf]                                     Client Rendering   0.89   1.53    25155   0.89   1.53
+[VProf]                                    Server Simulation   0.64   2.96     7300   2.19   3.28
+[VProf]                                           Prediction   0.56   1.49    25155   0.56   1.49
+[VProf]                                          Server Game   0.51   2.39     7300   1.77   2.68
+[VProf]                                           PanoramaUI   0.25   0.47    25155   0.25   0.47
+[VProf]                                         UserCommands   0.23   1.23     7300   0.78   1.46
+[VProf]                                          Unaccounted   0.19   0.55    25155   0.19   0.55
+[VProf]                                  Client Input/Output   0.13   0.76    25155   0.13   0.76
+[VProf]                                        Interpolation   0.11   0.22    25155   0.11   0.22
+[VProf]                                                 NPCs   0.09   0.50     7300   0.31   0.63
+[VProf]                               Server Send Networking   0.08   0.39     7300   0.27   0.48
+[VProf]                                           Networking   0.06   0.30     7300   0.20   0.44
+[VProf]                                  Server PackEntities   0.05   0.26     7300   0.18   0.32
+[VProf] LatchAndSaveLastSimulationValuesForInterpolationList   0.03   0.18     7300   0.11   0.22
+[VProf]                                              NavMesh   0.02   0.45     7300   0.09   0.51
+[VProf]                                                Magic   0.00   0.00      329   0.12   0.39
+[VProf]                                           FileSystem   0.00   0.00        4   0.60   2.19
+[VProf]                                       SoundOperators   0.00   0.00        2   0.17   0.18
+[VProf]
+[VProf] VProfLite stopped.
+
+------
+
+
+[Console] Disconnecting in order to print performance results in:
+[Console] 3
+[Console] 2
+[Console] 1
+[Console] Enabling flag 'donotecho' on channel 'Console'.
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 27990 frames.  (2157 frames excluded from analysis.)
+[VProf] FPS: Avg=244.4, P1=111.8
+[VProf]
+[VProf]                                                       All frames         Active frames
+[VProf]                                                         Avg    P99        N    Avg    P99
+[VProf] ---------------------------------------------------- ------ ------   ------ ------ ------
+[VProf]                                           FrameTotal   4.09   8.95    27990   4.09   8.95
+[VProf]                                       Frame Boundary   1.29   2.25    27990   1.29   2.25
+[VProf]                                     Client Rendering   0.85   1.39    27990   0.85   1.39
+[VProf]                                    Client Simulation   0.83   1.72    27990   0.83   1.72
+[VProf]                                    Server Simulation   0.55   2.68     7318   2.11   3.06
+[VProf]                                           Prediction   0.50   1.37    27990   0.50   1.37
+[VProf]                                          Server Game   0.44   2.29     7318   1.68   2.51
+[VProf]                                           PanoramaUI   0.25   0.41    27990   0.25   0.41
+[VProf]                                         UserCommands   0.20   1.05     7318   0.76   1.27
+[VProf]                                          Unaccounted   0.18   0.58    27990   0.18   0.58
+[VProf]                                  Client Input/Output   0.13   0.77    27990   0.13   0.77
+[VProf]                                        Interpolation   0.11   0.23    27990   0.11   0.23
+[VProf]                                                 NPCs   0.08   0.56     7318   0.30   0.65
+[VProf]                               Server Send Networking   0.07   0.38     7318   0.27   0.44
+[VProf]                                           Networking   0.05   0.34     7322   0.20   0.43
+[VProf]                                  Server PackEntities   0.05   0.26     7318   0.18   0.33
+[VProf] LatchAndSaveLastSimulationValuesForInterpolationList   0.03   0.17     7318   0.10   0.22
+[VProf]                                                Magic   0.00   0.00      330   0.11   0.51
+[VProf]                                           FileSystem   0.00   0.00        4   0.10   0.23
+[VProf]
+[VProf] VProfLite stopped.
+
+---
+
+
+[Console] Disconnecting in order to print performance results in:
+[Console] 3
+[Console] 2
+[Console] 1
+[Console] Enabling flag 'donotecho' on channel 'Console'.
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 26557 frames.  (2032 frames excluded from analysis.)
+[VProf] FPS: Avg=232.1, P1=112.6
+[VProf]
+[VProf]                                                       All frames         Active frames
+[VProf]                                                         Avg    P99        N    Avg    P99
+[VProf] ---------------------------------------------------- ------ ------   ------ ------ ------
+[VProf]                                           FrameTotal   4.31   8.88    26557   4.31   8.88
+[VProf]                                       Frame Boundary   1.48   3.37    26557   1.48   3.37
+[VProf]                                     Client Rendering   0.95   2.73    26557   0.95   2.73
+[VProf]                                    Client Simulation   0.81   1.74    26557   0.81   1.74
+[VProf]                                    Server Simulation   0.57   2.83     7309   2.07   3.06
+[VProf]                                           Prediction   0.50   1.26    26557   0.50   1.26
+[VProf]                                          Server Game   0.46   2.17     7309   1.67   2.55
+[VProf]                                           PanoramaUI   0.24   0.44    26557   0.24   0.44
+[VProf]                                         UserCommands   0.20   1.02     7309   0.74   1.17
+[VProf]                                          Unaccounted   0.18   0.53    26557   0.18   0.53
+[VProf]                                  Client Input/Output   0.12   0.68    26557   0.12   0.68
+[VProf]                                        Interpolation   0.10   0.24    26557   0.10   0.24
+[VProf]                                                 NPCs   0.08   0.51     7309   0.30   0.59
+[VProf]                               Server Send Networking   0.07   0.35     7309   0.26   0.39
+[VProf]                                           Networking   0.05   0.32     7313   0.19   0.52
+[VProf]                                  Server PackEntities   0.05   0.26     7309   0.18   0.29
+[VProf] LatchAndSaveLastSimulationValuesForInterpolationList   0.03   0.17     7309   0.10   0.25
+[VProf]                                                Magic   0.00   0.00      329   0.11   0.44
+[VProf]
+[VProf] VProfLite stopped.
+[SplitScreen] Writing configuration for slot 0
+[SplitScreen] Saved 'cs2_user_keys.vcfg' to SteamRemoteStorage, 1815 bytes OK
+[SplitScreen] Saved user config file 'cfg/cs2_user_keys_0_slot0.vcfg': type 1
+[SplitScreen] Saved user config file 'cfg/cs2_user_keys_0_slot0.vcfg_lastclouded': type 3
+[SplitScreen] Saved 'cs2_user_convars.vcfg' to SteamRemoteStorage, 3221 bytes OK
+[SplitScreen] Saved user config file 'cfg/cs2_user_convars_0_slot0.vcfg': type 1
+[SplitScreen] Saved user config file 'cfg/cs2_user_convars_0_slot0.vcfg_lastclouded': type 3
+[RenderSystem] Saved video settings config to 'cfg\cs2_video.txt'
+[RenderSystem] Successfully created dx11 swap chain [FlipDiscard | AllowTear]
+[RenderSystem] Successfully created dx11 swap chain [    Discard |    NoTear]
+
+---
+
+2024-05-29-19:55:42
+
+[Console] Enabling flag 'donotecho' on channel 'Console'.
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 21279 frames.  (1724 frames excluded from analysis.)
+[VProf] FPS: Avg=185.9, P1=87.7
+[VProf]
+[VProf]                                                       All frames         Active frames
+[VProf]                                                         Avg    P99        N    Avg    P99
+[VProf] ---------------------------------------------------- ------ ------   ------ ------ ------
+[VProf]                                           FrameTotal   5.38  11.40    21279   5.38  11.40
+[VProf]                                       Frame Boundary   1.60   3.18    21279   1.60   3.18
+[VProf]                                    Client Simulation   1.18   2.47    21279   1.18   2.47
+[VProf]                                     Client Rendering   0.95   1.52    21279   0.95   1.52
+[VProf]                                    Server Simulation   0.84   3.42     7283   2.46   3.71
+[VProf]                                           Prediction   0.76   1.81    21279   0.76   1.81
+[VProf]                                          Server Game   0.68   3.05     7283   1.99   3.49
+[VProf]                                         UserCommands   0.31   1.36     7283   0.90   1.69
+[VProf]                                           PanoramaUI   0.29   0.69    21279   0.29   0.69
+[VProf]                                          Unaccounted   0.25   0.73    21279   0.25   0.73
+[VProf]                                        Interpolation   0.15   0.44    21279   0.15   0.44
+[VProf]                                  Client Input/Output   0.14   2.27    21279   0.14   2.27
+[VProf]                                     Server Animation   0.11   0.64     7283   0.33   0.72
+[VProf]                                                 NPCs   0.11   0.76     7283   0.33   1.02
+[VProf]                               Server Send Networking   0.10   0.44     7283   0.28   0.48
+[VProf]                                     Client_Animation   0.09   0.50     7283   0.26   0.59
+[VProf]                                           Networking   0.08   0.41     7285   0.22   0.51
+[VProf]                                  Server PackEntities   0.07   0.31     7283   0.20   0.38
+[VProf] LatchAndSaveLastSimulationValuesForInterpolationList   0.05   0.24     7283   0.13   0.30
+[VProf]                                       Client Physics   0.04   0.22     7283   0.11   0.37
+[VProf]                                              NavMesh   0.03   0.41     7283   0.10   0.52
+[VProf]                                                Magic   0.00   0.00      330   0.28   0.96
+[VProf]                                  Particle Simulation   0.00   0.01      255   0.08   0.55
+[VProf]                                           FileSystem   0.00   0.00        4   0.28   0.91
+[VProf]
+[VProf] VProfLite stopped.
+
+2024-05-29-20:11:36
+
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 24091 frames.  (1885 frames excluded from analysis.)
+[VProf] FPS: Avg=210.5, P1=105.6
+[VProf]
+[VProf]                                                       All frames         Active frames
+[VProf]                                                         Avg    P99        N    Avg    P99
+[VProf] ---------------------------------------------------- ------ ------   ------ ------ ------
+[VProf]                                           FrameTotal   4.75   9.47    24091   4.75   9.47
+[VProf]                                       Frame Boundary   1.48   2.65    24091   1.48   2.65
+[VProf]                                    Client Simulation   1.02   2.03    24091   1.02   2.03
+[VProf]                                     Client Rendering   0.88   1.40    24091   0.88   1.40
+[VProf]                                    Server Simulation   0.69   3.07     7300   2.28   3.38
+[VProf]                                           Prediction   0.62   1.69    24091   0.62   1.69
+[VProf]                                          Server Game   0.56   2.51     7300   1.84   2.88
+[VProf]                                           PanoramaUI   0.27   0.47    24091   0.27   0.47
+[VProf]                                         UserCommands   0.25   1.15     7300   0.82   1.35
+[VProf]                                          Unaccounted   0.23   0.77    24091   0.23   0.77
+[VProf]                                        Interpolation   0.13   0.31    24091   0.13   0.31
+[VProf]                                  Client Input/Output   0.13   1.02    24091   0.13   1.02
+[VProf]                                                 NPCs   0.10   0.65     7300   0.34   0.80
+[VProf]                                     Server Animation   0.09   0.48     7300   0.30   0.59
+[VProf]                               Server Send Networking   0.08   0.40     7300   0.27   0.45
+[VProf]                                     Client_Animation   0.07   0.41     7300   0.24   0.51
+[VProf]                                           Networking   0.06   0.38     7301   0.20   0.54
+[VProf]                                  Server PackEntities   0.06   0.31     7300   0.19   0.35
+[VProf]                                                  SDL   0.05   2.42    24091   0.05   2.42
+[VProf] LatchAndSaveLastSimulationValuesForInterpolationList   0.04   0.22     7300   0.12   0.30
+[VProf]                                              NavMesh   0.03   0.39     7300   0.09   0.50
+[VProf]                                                Magic   0.00   0.00      330   0.27   0.79
+[VProf]                                           FileSystem   0.00   0.00        4   0.36   1.27
+[VProf]
+[VProf] VProfLite stopped.
+
+2024-05-29-20:15:27
+
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 24524 frames.  (1866 frames excluded from analysis.)
+[VProf] FPS: Avg=214.3, P1=104.9
+[VProf]
+[VProf]                                                       All frames         Active frames
+[VProf]                                                         Avg    P99        N    Avg    P99
+[VProf] ---------------------------------------------------- ------ ------   ------ ------ ------
+[VProf]                                           FrameTotal   4.67   9.53    24524   4.67   9.53
+[VProf]                                       Frame Boundary   1.47   2.48    24524   1.47   2.48
+[VProf]                                    Client Simulation   0.99   1.98    24524   0.99   1.98
+[VProf]                                     Client Rendering   0.88   1.81    24524   0.88   1.81
+[VProf]                                    Server Simulation   0.67   2.89     7304   2.25   3.20
+[VProf]                                           Prediction   0.60   1.45    24524   0.60   1.45
+[VProf]                                          Server Game   0.54   2.40     7304   1.82   2.61
+[VProf]                                           PanoramaUI   0.27   0.47    24524   0.27   0.47
+[VProf]                                         UserCommands   0.24   1.21     7304   0.81   1.44
+[VProf]                                          Unaccounted   0.22   0.72    24524   0.22   0.72
+[VProf]                                        Interpolation   0.13   0.28    24524   0.13   0.28
+[VProf]                                  Client Input/Output   0.12   1.22    24524   0.12   1.22
+[VProf]                                                 NPCs   0.10   0.63     7304   0.35   0.87
+[VProf]                                     Server Animation   0.09   0.44     7304   0.29   0.50
+[VProf]                               Server Send Networking   0.08   0.40     7304   0.26   0.46
+[VProf]                                     Client_Animation   0.07   0.37     7304   0.22   0.47
+[VProf]                                           Networking   0.06   0.36     7308   0.19   0.55
+[VProf]                                  Server PackEntities   0.05   0.26     7304   0.18   0.30
+[VProf] LatchAndSaveLastSimulationValuesForInterpolationList   0.04   0.25     7304   0.12   0.29
+[VProf]                                              NavMesh   0.03   0.41     7304   0.09   0.50
+[VProf]                                                Magic   0.00   0.00      329   0.27   0.78
+[VProf]
+[VProf] VProfLite stopped.
+
+2024-05-29-20:25:48
+NVIDIA Reflex + Boost
+
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 22547 frames.  (1643 frames excluded from analysis.)
+[VProf] FPS: Avg=197.0, P1=99.1
+[VProf]
+[VProf]                                                       All frames         Active frames
+[VProf]                                                         Avg    P99        N    Avg    P99
+[VProf] ---------------------------------------------------- ------ ------   ------ ------ ------
+[VProf]                                           FrameTotal   5.08  10.09    22547   5.08  10.09
+[VProf]                                       Frame Boundary   1.56   3.02    22547   1.56   3.02
+[VProf]                                    Client Simulation   1.09   2.05    22547   1.09   2.05
+[VProf]                                     Client Rendering   0.92   1.73    22547   0.92   1.73
+[VProf]                                    Server Simulation   0.77   3.27     7307   2.36   3.44
+[VProf]                                           Prediction   0.68   1.62    22547   0.68   1.62
+[VProf]                                          Server Game   0.62   2.65     7307   1.92   2.96
+[VProf]                                           PanoramaUI   0.28   0.54    22547   0.28   0.54
+[VProf]                                         UserCommands   0.27   1.29     7307   0.85   1.61
+[VProf]                                          Unaccounted   0.25   0.83    22547   0.25   0.83
+[VProf]                                        Interpolation   0.14   0.36    22547   0.14   0.36
+[VProf]                                  Client Input/Output   0.13   0.91    22547   0.13   0.91
+[VProf]                                                 NPCs   0.12   0.62     7307   0.36   0.74
+[VProf]                                     Server Animation   0.10   0.51     7307   0.31   0.64
+[VProf]                               Server Send Networking   0.09   0.42     7307   0.27   0.49
+[VProf]                                     Client_Animation   0.08   0.41     7307   0.24   0.49
+[VProf]                                           Networking   0.07   0.40     7308   0.20   0.52
+[VProf]                                  Server PackEntities   0.06   0.32     7307   0.19   0.37
+[VProf]                                                  SDL   0.05   1.06    22547   0.05   1.06
+[VProf] LatchAndSaveLastSimulationValuesForInterpolationList   0.04   0.22     7307   0.13   0.31
+[VProf]                                              NavMesh   0.03   0.42     7307   0.09   0.51
+[VProf]                                                Magic   0.00   0.00      330   0.28   0.81
 [VProf]
 [VProf] VProfLite stopped.
