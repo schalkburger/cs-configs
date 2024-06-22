@@ -1,13 +1,6 @@
 # Define the executable for changing resolution
 $SetResolutionCmd = "SetScreenResolution"
 
-# Define resolutions
-$targetResolutionX = "1440"
-$targetResolutionY = "1080"
-
-$nativeResolutionX = "1920"
-$nativeResolutionY = "1080"
-
 # Function to change resolution
 function Set-Resolution {
         param (
@@ -17,7 +10,7 @@ function Set-Resolution {
 }
 
 # Change to target resolution
-SetScreenResolution $targetResolutionX $targetResolutionY
+SetScreenResolution 1440 1080
 
 # Define the Steam game launch URL for Counter-Strike 2
 $CS2SteamURL = "steam://launch/730/Dialog"
@@ -25,13 +18,27 @@ $CS2SteamURL = "steam://launch/730/Dialog"
 # Start Counter-Strike 2
 Start-Process $CS2SteamURL
 
-# Wait for the game process to close
+Start-Sleep -Seconds 5
+
+# Check for the game process
+$gameProcess = Get-Process -Name "cs2" -ErrorAction SilentlyContinue
+
+if ($null -eq $gameProcess) {
+        Write-Host "Unable to detect the game process. Please ensure 'cs2' is the correct process name."
+        exit
+}
+
 Write-Host "Waiting for Counter-Strike 2 to close..."
-while (Get-Process -Name "cs2" -ErrorAction SilentlyContinue) {
+
+# Loop to check if the game process is still running
+while ($gameProcess) {
         Start-Sleep -Seconds 5
+        $gameProcess = Get-Process -Name "cs2" -ErrorAction SilentlyContinue
 }
 
 # Change back to the native resolution
-SetScreenResolution $nativeResolutionX $nativeResolutionY
+SetScreenResolution 1920 1080
 
-Write-Host "Resolution restored to $nativeResolutionX $nativeResolutionY."
+Write-Host "Resolution restored to 1920x1080."
+Write-Host "Press any key to exit..."
+[void][System.Console]::ReadKey($true)  # Keeps the window open until a key is pressed
