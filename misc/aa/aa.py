@@ -57,7 +57,7 @@ def detect_and_click(image_accept_path, image_ban_path):
                 )
                 print(
                     Fore.BLUE
-                    + "Waiting for everyone to accept... restarting in 5 seconds"
+                    + "Waiting for everyone to accept... restarting search in 5 seconds."
                     + Style.RESET_ALL
                 )
                 time.sleep(5)
@@ -67,9 +67,10 @@ def detect_and_click(image_accept_path, image_ban_path):
                 if location_ban:
                     print(
                         Fore.RED
-                        + "Ban phase detected. Stopping Auto Accept."
+                        + "Ban phase detected. Stopping Auto Accept in 5 seconds."
                         + Style.RESET_ALL
                     )
+                    time.sleep(5)
                     # Set the global variable to stop the script
                     stop_script = True
                     break  # Exit the loop to stop the script
