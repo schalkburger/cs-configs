@@ -28,6 +28,8 @@ if ($null -eq $gameProcess) {
     exit
 }
 
+Write-Host "Counter-Strike 2 has launched"
+
 Write-Host "Waiting for Counter-Strike 2 to close..."
 
 # Loop to check if the game process is still running
