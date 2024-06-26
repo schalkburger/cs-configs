@@ -21,6 +21,7 @@ def resource_path(relative_path):
 # Get absolute paths of the images
 image_accept_path = resource_path("accept.png")
 image_ban_path = resource_path("ban.png")
+image_teamchat_path = resource_path("teamchat.png")
 
 # Create a global variable to track script status
 stop_script = False
@@ -63,7 +64,7 @@ def detect_and_click(image_accept_path, image_ban_path):
                 time.sleep(5)
 
                 # Check for the ban button
-                location_ban = pyautogui.locateOnScreen(image_ban_path)
+                location_ban = pyautogui.locateOnScreen(image_teamchat_path)
                 if location_ban:
                     print(
                         Fore.RED
