@@ -29,7 +29,7 @@ if ($null -eq $gameProcess) {
 }
 
 Write-Host "Counter-Strike 2 has launched"
-
+Write-Host "..."
 Write-Host "Waiting for Counter-Strike 2 to close..."
 
 # Loop to check if the game process is still running
@@ -41,6 +41,7 @@ while ($gameProcess) {
 # Change back to the native resolution
 SetScreenResolution 1920 1080
 
+Write-Host "..."
 Write-Host "Resolution restored to 1920x1080."
-Write-Host "Press any key to exit..."
-[void][System.Console]::ReadKey($true)  # Keeps the window open until a key is pressed
+# Write-Host "Press any key to exit..."
+# [void][System.Console]::ReadKey($true)  # Keeps the window open until a key is pressed
