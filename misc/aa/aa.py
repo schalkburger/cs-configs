@@ -21,7 +21,6 @@ def resource_path(relative_path):
 # Get absolute paths of the images
 image_accept_path = resource_path("accept.png")
 image_ban_path = resource_path("ban.png")
-image_teamchat_path = resource_path("teamchat.png")
 
 # Create a global variable to track script status
 stop_script = False
@@ -42,8 +41,8 @@ def on_press(key):
 # Function to detect and click the accept image on the screen
 def detect_and_click(image_accept_path, image_ban_path):
     global stop_script  # Declare global at the beginning of the function
-    print(Fore.BLUE + "Auto Accept starting in 3 seconds." + Style.RESET_ALL)
-    time.sleep(3)
+    print(Fore.BLUE + "Auto Accept starting in 1 second." + Style.RESET_ALL)
+    time.sleep(1)
     while not stop_script:
         try:
             # Check for the accept button
@@ -58,34 +57,34 @@ def detect_and_click(image_accept_path, image_ban_path):
                 )
                 print(
                     Fore.BLUE
-                    + "Waiting for everyone to accept... restarting search in 5 seconds."
+                    + "Waiting for everyone to Accept... restarting search in 5 seconds."
                     + Style.RESET_ALL
                 )
                 time.sleep(5)
 
                 # Check for the ban button
-                location_ban = pyautogui.locateOnScreen(image_teamchat_path)
+                location_ban = pyautogui.locateOnScreen(image_ban_path)
                 if location_ban:
                     print(
                         Fore.RED
-                        + "Ban phase detected. Stopping Auto Accept in 5 seconds."
+                        + "Ban phase detected. Stopping Auto Accept in 3 seconds."
                         + Style.RESET_ALL
                     )
-                    time.sleep(5)
+                    time.sleep(3)
                     # Set the global variable to stop the script
                     stop_script = True
                     break  # Exit the loop to stop the script
 
             else:
-                print("No game found. Retrying in 2 seconds...")
-                time.sleep(2)
+                print("No game found. Retrying in 3 seconds...")
+                time.sleep(3)
         except pyautogui.ImageNotFoundException:
             print(
                 Fore.YELLOW
                 + "No game found. Waiting for Accept button..."
                 + Style.RESET_ALL
             )
-            time.sleep(4)
+            time.sleep(5)
         except Exception as e:
             print(Fore.RED + f"An unexpected error occurred: {e}" + Style.RESET_ALL)
             time.sleep(1)
