@@ -6,11 +6,17 @@ function Set-Resolution {
     param (
         [string]$resolution
     )
-    & $SetResolutionCmd $resolution1 $resolution2
+    & $SetResolutionCmd $resolution
 }
+
+Write-Host "Launcher starting... `n" -ForegroundColor Cyan
+
+Start-Sleep -Seconds 1
 
 # Change to target resolution
 SetScreenResolution 1440 1080
+
+Start-Sleep -Seconds 3
 
 # Define the Steam game launch URL for Counter-Strike 2
 $CS2SteamURL = "steam://launch/730/Dialog"
@@ -18,30 +24,33 @@ $CS2SteamURL = "steam://launch/730/Dialog"
 # Start Counter-Strike 2
 Start-Process $CS2SteamURL
 
-Start-Sleep -Seconds 5
+Write-Host "Counter-Strike 2 has launched `n" -ForegroundColor Green
 
-# Check for the game process
-$gameProcess = Get-Process -Name "cs2" -ErrorAction SilentlyContinue
-
-if ($null -eq $gameProcess) {
-    Write-Host "Unable to detect the game process. Please ensure 'cs2' is the correct process name."
-    exit
-}
-
-Write-Host "Counter-Strike 2 has launched"
-Write-Host "..."
-Write-Host "Waiting for Counter-Strike 2 to close..."
-
-# Loop to check if the game process is still running
-while ($gameProcess) {
-    Start-Sleep -Seconds 5
-    $gameProcess = Get-Process -Name "cs2" -ErrorAction SilentlyContinue
+# Wait for specific key press (Enter key)
+Write-Host "Press the 'Enter' key when you are done playing Counter-Strike 2..." -ForegroundColor White
+while ($true) {
+    $keyInfo = [System.Console]::ReadKey($true)
+    if ($keyInfo.Key -eq [System.ConsoleKey]::Enter) {
+        break
+    }
+    else {
+        Write-Host "Incorrect key. Please press 'Enter' to continue." -ForegroundColor Red
+    }
 }
 
 # Change back to the native resolution
 SetScreenResolution 1920 1080
 
-Write-Host "..."
-Write-Host "Resolution restored to 1920x1080."
-Write-Host "Press any key to exit..."
-[void][System.Console]::ReadKey($true)  # Keeps the window open until a key is pressed
+Start-Sleep -Seconds 3
+
+Write-Host "`n Resolution restored to 1920x1080.`n" -ForegroundColor Yellow
+Write-Host "Press the 'Enter' key to exit..." -ForegroundColor White
+while ($true) {
+    $keyInfo = [System.Console]::ReadKey($true)
+    if ($keyInfo.Key -eq [System.ConsoleKey]::Enter) {
+        break
+    }
+    else {
+        Write-Host "Incorrect key. Please press 'Enter' to exit." -ForegroundColor Red
+    }
+}
