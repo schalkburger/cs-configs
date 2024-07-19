@@ -1,14 +1,3 @@
-# Define the executable for changing resolution
-$SetResolutionCmd = "SetScreenResolution"
-
-# Function to change resolution
-function Set-Resolution {
-    param (
-        [string]$resolution
-    )
-    & $SetResolutionCmd $resolution
-}
-
 Write-Host "Launcher starting... `n" -ForegroundColor Cyan
 
 Start-Sleep -Seconds 1
@@ -19,15 +8,31 @@ SetScreenResolution 1440 1080
 Start-Sleep -Seconds 3
 
 # Define the Steam game launch URL for Counter-Strike 2
-$CS2SteamURL = "steam://launch/730/Dialog"
+$CS2SteamURL = "steam://launch/730"
 
 # Start Counter-Strike 2
 Start-Process $CS2SteamURL
 
-Write-Host "Counter-Strike 2 has launched `n" -ForegroundColor Green
+Write-Host "`nCounter-Strike 2 has launched `n" -ForegroundColor Green
+
+# Wait a bit to ensure the game has fully launched
+Start-Sleep -Seconds 60
+
+# Wait for the cs2 process to be available and set priority and affinity
+$processName = "cs2"
+while ($true) {
+    $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+    if ($null -ne $process) {
+        $process.PriorityClass = 'High'
+        $process.ProcessorAffinity = 0x000000000000001E
+        Write-Host "Process priority and affinity set for $processName" -ForegroundColor DarkCyan
+        break
+    }
+    Start-Sleep -Seconds 1
+}
 
 # Wait for specific key press (Enter key)
-Write-Host "Press the 'Enter' key when you are done playing Counter-Strike 2..." -ForegroundColor White
+Write-Host "`nPress the 'Enter' key when you are done playing Counter-Strike 2..." -ForegroundColor White
 while ($true) {
     $keyInfo = [System.Console]::ReadKey($true)
     if ($keyInfo.Key -eq [System.ConsoleKey]::Enter) {
@@ -43,7 +48,7 @@ SetScreenResolution 1920 1080
 
 Start-Sleep -Seconds 3
 
-Write-Host "`n Resolution restored to 1920x1080.`n" -ForegroundColor Yellow
+Write-Host "`nResolution restored to 1920x1080.`n" -ForegroundColor Yellow
 Write-Host "Press the 'Enter' key to exit..." -ForegroundColor White
 while ($true) {
     $keyInfo = [System.Console]::ReadKey($true)
