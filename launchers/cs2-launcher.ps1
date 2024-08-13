@@ -31,6 +31,10 @@ while ($true) {
     Start-Sleep -Seconds 1
 }
 
+# Move the Counter-Strike 2 window to the second monitor using Python
+$pythonScriptPath = "F:\GitHub\cs-configs\launchers\cs2-movewindow.py"
+Start-Process "python" -ArgumentList $pythonScriptPath
+
 # Wait for specific key press (Enter key)
 Write-Host "`nPress the 'Enter' key when you are done playing Counter-Strike 2..." -ForegroundColor White
 while ($true) {
