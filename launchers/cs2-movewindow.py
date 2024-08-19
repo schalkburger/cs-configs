@@ -16,10 +16,10 @@ def get_secondary_monitor_coords():
 secondary_monitor_coords = get_secondary_monitor_coords()
 
 # Wait a bit for the window to open
-time.sleep(5)  # Adjust the sleep time if necessary
+time.sleep(1)  # Adjust the sleep time if necessary
 
 # Get the handle for the CS2 Launcher window
-hwnd = win32gui.FindWindow(None, "CS2 Launcher")
+hwnd = win32gui.FindWindow("CASCADIA_HOSTING_WINDOW_CLASS", None)
 
 if hwnd:
     # Move the window to the secondary monitor
