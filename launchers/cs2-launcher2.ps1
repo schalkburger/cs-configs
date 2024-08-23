@@ -73,7 +73,7 @@ function AutoAccept {
 # Function to restore resolution
 function RestoreResolution {
     SetScreenResolution 1920 1080
-    Write-Host "`nResolution restored to 1920x1080.`n" -ForegroundColor Yellow
+    Write-Host "`nResolution restored to 1920x1080.`n" -ForegroundColor DarkCyan
 }
 
 # Function to open lineups folder
@@ -117,6 +117,7 @@ $Opts = @(
                 Write-Host "Exiting Counter-Strike 2..." -ForegroundColor White
             }
             else {
+                RestoreResolution
                 Write-Host "Counter-Strike 2 is not running." -ForegroundColor Yellow
             }
             return
