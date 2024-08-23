@@ -27,8 +27,8 @@ if hwnd:
         hwnd,
         secondary_monitor_coords[0],
         secondary_monitor_coords[1],
-        1440,  # Adjust width as needed
-        1080,  # Adjust height as needed
+        700,  # Adjust width as needed
+        370,  # Adjust height as needed
         True,
     )
 else:

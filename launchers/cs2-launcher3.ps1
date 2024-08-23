@@ -1,8 +1,21 @@
 # ASCII Art of Gabe Newell's Face
 
-# Read and display the ASCII art from the file
-Get-Content -Path "F:\GitHub\cs-configs\launchers\gaben.txt" | ForEach-Object { Write-Output $_ }
-Write-Output "`n"
+Write-Host "⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠉⠉⠉⠉⠋⠉⠉⠙⠛⠛⠻⠿⢿⣿⣿⣿⣿⣿⣿⣿" -ForegroundColor Yellow
+Write-Host "⣿⣿⣿⣿⠿⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠻⣿⣿⣿⣿⣿" -ForegroundColor Yellow
+Write-Host "⣿⣿⡟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢻⣿⣿⣿" -ForegroundColor Yellow
+Write-Host "⣿⠏⠄⠄⠄⠄⠄⠄⠄⠄⢀⣔⢤⣄⡀⠄⡄⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⣿⣿" -ForegroundColor Yellow
+Write-Host "⠏⠄⠄⠄⠄⠄⠄⠄⢀⣀⣨⣵⣿⣿⣿⣿⣧⣦⣤⣀⣿⣷⡐⠄⠄⠄⠄⠄⢿⣿" -ForegroundColor Yellow
+Write-Host "⠄⠄⠄⠄⠄⠄⠐⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠄⠄⠄⢚⣿" -ForegroundColor Yellow
+Write-Host "⣆⠄⠄⠄⠄⠄⠄⢻⣿⣿⣿⣿⡿⠛⠛⠛⠛⣿⢿⣿⣿⣿⡿⢟⣻⣄⣤⣮⡝⣿" -ForegroundColor Yellow
+Write-Host "⣿⠆⠄⠄⠄⠄⠄⠄⠄⠄⠉⠘⣿⡗⡕⣋⢉⣩⣽⣬⣭⣶⣿⣿⣿⣿⣝⣻⣷⣿" -ForegroundColor Yellow
+Write-Host "⣿⣦⡀⠄⠄⠠⢀⠄⠄⠁⠄⠄⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣿" -ForegroundColor Yellow
+Write-Host "⣿⣿⣿⡆⠄⠄⠰⣶⡗⠄⠄⠄⣿⣿⣿⣿⣦⣌⠙⠿⣿⣿⣿⣿⣿⣿⣿⡛⠱⢿" -ForegroundColor Yellow
+Write-Host "⣿⣿⣿⣿⡀⠄⠄⠄⠿⣿⠄⠄⠄⠨⡿⠿⠿⣿⣟⣿⣯⣹⣿⣿⣿⣿⣿⣿⣦⡀" -ForegroundColor Yellow
+Write-Host "⣿⣿⣿⣿⣷⠄⠄⠄⠄⢷⣦⠄⠄⠐⢶⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇" -ForegroundColor Yellow
+Write-Host "⣿⣿⣿⣿⣿⣧⡄⠄⠄⠄⠉⠄⠄⠄⢉⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠄" -ForegroundColor Yellow
+Write-Host "⣿⣿⣿⣿⣿⠟⠋⠄⠄⠄⠄⠄⠄⠈⠛⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠄⠄" -ForegroundColor Yellow
+Write-Host "⣿⠿⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⠿⢿⣿⣿⣿⣿⣿⠿⠋⠄⠄⠄⠄" -ForegroundColor Yellow
+Write-Host "`n"
 
 # Install PSMenu module if not already installed
 if (-not (Get-Module -ListAvailable -Name PSMenu)) {
@@ -28,6 +41,12 @@ function New-MenuItem([String]$DisplayName, [ScriptBlock]$Script) {
     $MenuItem.DisplayName = $DisplayName
     $MenuItem.Script = $Script
     Return $MenuItem
+}
+
+# Function to set screen resolution
+function SetScreenResolution($width, $height) {
+    # Placeholder for setting screen resolution
+    Write-Host "Setting resolution to $width x $height" -ForegroundColor Yellow
 }
 
 # Function to set CS2 affinity
