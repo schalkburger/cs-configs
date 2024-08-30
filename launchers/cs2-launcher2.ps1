@@ -41,10 +41,10 @@ function GetCS2Affinity {
         $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
         if ($null -ne $process) {
             $affinity = $process.ProcessorAffinity
+            Clear-Host
             Write-Host "Affinity for $processName is $affinity" -ForegroundColor DarkCyan
 
             if ($affinity -eq 30) {
-                Clear-Host
                 Write-Host "Affinity for cs2 has been set`n" -ForegroundColor Green
             }
             elseif ($affinity -eq 255) {
@@ -83,7 +83,8 @@ function LaunchCS2 {
     Start-Sleep -Seconds 1
     $pythonScriptPath = "F:\GitHub\cs-configs\launchers\cs2-movewindow.py"
     Start-Process "python" -ArgumentList $pythonScriptPath
-    Start-Sleep -Seconds 30
+    # Start-Sleep -Seconds 30
+    Start-PSTimer -Seconds 30 -clear
     $processName = "cs2"
     while ($true) {
         $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
@@ -169,14 +170,14 @@ function CloseCS2 {
 $Opts = @(
     $(New-MenuItem -DisplayName "Launch Counter-Strike 2" -Script { LaunchCS2 }),
     $(Get-MenuSeparator)
-    $(New-MenuItem -DisplayName "Get Affinity" -Script { GetCS2Affinity }),
+    $(New-MenuItem -DisplayName "Auto Accept" -Script { AutoAccept }),
+    $(New-MenuItem -DisplayName "Check Affinity" -Script { GetCS2Affinity }),
     $(New-MenuItem -DisplayName "Set Affinity" -Script { SetCS2Affinity }),
     $(Get-MenuSeparator)
     $(New-MenuItem -DisplayName "Move Terminal" -Script { MoveWindow }),
     $(New-MenuItem -DisplayName "Restore Resolution" -Script { RestoreResolution }),
     $(New-MenuItem -DisplayName "Set Resolution" -Script { SetResolution }),
     $(New-MenuItem -DisplayName "Open Lineups" -Script { OpenLineups }),
-    $(New-MenuItem -DisplayName "Auto Accept" -Script { AutoAccept }),
     $(Get-MenuSeparator)
     $(New-MenuItem -DisplayName "Restart CS2" -Script { RestartCS2 }),
     $(New-MenuItem -DisplayName "Close CS2" -Script { CloseCS2 }),
