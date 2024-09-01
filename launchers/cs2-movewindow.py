@@ -15,6 +15,22 @@ def get_secondary_monitor_coords():
 # Get the coordinates of the secondary monitor
 secondary_monitor_coords = get_secondary_monitor_coords()
 
+# Get the dimensions of the secondary monitor
+secondary_monitor_info = win32api.GetMonitorInfo(
+    win32api.MonitorFromPoint(secondary_monitor_coords, 2)
+)
+secondary_monitor_rect = secondary_monitor_info["Monitor"]
+secondary_monitor_width = secondary_monitor_rect[2] - secondary_monitor_rect[0]
+secondary_monitor_height = secondary_monitor_rect[3] - secondary_monitor_rect[1]
+
+# Calculate the bottom right corner coordinates
+bottom_right_x = (
+    secondary_monitor_coords[0] + secondary_monitor_width - 700
+)  # Adjust width as needed
+bottom_right_y = (
+    secondary_monitor_coords[1] + secondary_monitor_height - 450
+)  # Adjust height as needed
+
 # Wait a bit for the window to open
 time.sleep(1)  # Adjust the sleep time if necessary
 
@@ -22,11 +38,11 @@ time.sleep(1)  # Adjust the sleep time if necessary
 hwnd = win32gui.FindWindow("CASCADIA_HOSTING_WINDOW_CLASS", None)
 
 if hwnd:
-    # Move the window to the secondary monitor
+    # Move the window to the bottom right corner of the secondary monitor
     win32gui.MoveWindow(
         hwnd,
-        secondary_monitor_coords[0],
-        secondary_monitor_coords[1],
+        bottom_right_x,
+        bottom_right_y,
         700,  # Adjust width as needed
         400,  # Adjust height as needed
         True,

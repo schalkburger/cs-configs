@@ -1,11 +1,20 @@
-# ASCII Art of Gabe Newell's Face
-
 # Read and display the ASCII art from the file
 Clear-Host
+
+# Function to move window
+function MoveWindow {
+    $pythonScriptPath = "F:\GitHub\cs-configs\launchers\cs2-movewindow.py"
+    Clear-Host
+    Start-Process "python" -ArgumentList $pythonScriptPath
+}
+
 # Get-Content -Path "F:\GitHub\cs-configs\launchers\gaben.txt" | ForEach-Object { Write-Output $_ }
 Write-Output "`n"
-Write-Host "       $(Get-Date -Format "dddd, dd\/MM\/yyyy HH:mm")"
+Write-Host "       $(Get-Date -Format 'dddd, dd\/MM\/yyyy HH:mm')"
 Write-Output "`n"
+
+# Move window immediately upon script launch
+MoveWindow
 
 # Install PSMenu module if not already installed
 if (-not (Get-Module -ListAvailable -Name PSMenu)) {
@@ -32,7 +41,6 @@ function New-MenuItem([String]$DisplayName, [ScriptBlock]$Script) {
     $MenuItem.Script = $Script
     Return $MenuItem
 }
-
 
 # 30 = set
 # 255 = not set
@@ -72,7 +80,6 @@ function SetCS2Affinity {
         }
         Start-Sleep -Seconds 1
     }
-    GetCS2Affinity
 }
 
 # Function to launch Counter-Strike 2
@@ -83,34 +90,20 @@ function LaunchCS2 {
     Clear-Host
     Write-Host "`nCounter-Strike 2 has launched.`n" -ForegroundColor Green
     Start-Sleep -Seconds 1
-    $pythonScriptPath = "F:\GitHub\cs-configs\launchers\cs2-movewindow.py"
-    Start-Process "python" -ArgumentList $pythonScriptPath
     # Start-Sleep -Seconds 30
     Start-PSTimer -Seconds 30 -clear
-    $processCS2Name = "cs2"
-    if ($null -ne $processCS2Name) {
-        while ($true) {
-            $process = Get-Process -Name $processCS2Name -ErrorAction SilentlyContinue
-            if ($null -ne $process) {
-                $process.PriorityClass = 'High'
-                $process.ProcessorAffinity = 0x000000000000001E
-                Write-Host "Process priority and affinity set for $processCS2Name" -ForegroundColor DarkCyan
-                break
-            }
-            Start-Sleep -Seconds 1
+    $processName = "cs2"
+    while ($true) {
+        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+        if ($null -ne $process) {
+            $process.PriorityClass = 'High'
+            $process.ProcessorAffinity = 0x000000000000001E
+            Clear-Host
+            Write-Host "Process priority and affinity set for $processName.`n" -ForegroundColor DarkCyan
+            break
         }
+        Start-Sleep -Seconds 1
     }
-    else {
-        Write-Host "Counter-Strike 2 is not running." -ForegroundColor Yellow
-    }
-}
-
-
-# Function to move window
-function MoveWindow {
-    $pythonScriptPath = "F:\GitHub\cs-configs\launchers\cs2-movewindow.py"
-    Clear-Host
-    Start-Process "python" -ArgumentList $pythonScriptPath
 }
 
 # Function to auto accept
@@ -133,7 +126,6 @@ function SetResolution {
     Clear-Host
     Write-Host "`nResolution set to 1440x1080.`n" -ForegroundColor DarkCyan
 }
-
 
 # Function to restart CS2
 function RestartCS2 {
@@ -195,6 +187,12 @@ function OpenLineupAncient {
     ReloadScript
 }
 
+function OpenLineupDust2 {
+    Clear-Host
+    Start-Process "F:\GitHub\cs-configs\lineups\cs2-lineups-dust2.png"
+    ReloadScript
+}
+
 function OpenLineupInferno {
     Clear-Host
     Start-Process "F:\GitHub\cs-configs\lineups\cs2-lineups-inferno.png"
@@ -218,6 +216,7 @@ function ShowLineupsSubMenu {
     $LineupsOpts = @(
         $(Get-MenuSeparator)
         $(New-MenuItem -DisplayName " View Ancient Lineups" -Script { OpenLineupAncient }),
+        $(New-MenuItem -DisplayName " View Dust2 Lineups" -Script { OpenLineupDust2 }),
         $(New-MenuItem -DisplayName " View Inferno Lineups" -Script { OpenLineupInferno }),
         $(New-MenuItem -DisplayName " View Mirage Lineups" -Script { OpenLineupMirage }),
         $(New-MenuItem -DisplayName " View Vertigo Lineups" -Script { OpenLineupVertigo }),
@@ -262,5 +261,11 @@ while ($true) {
         break
     }
 }
+
+# $pythonScriptPath = "F:\GitHub\cs-configs\launchers\cs2-movewindow.py"
+# Clear-Host
+# Start-Process "python" -ArgumentList $pythonScriptPath
+
+
 
 # End of script
