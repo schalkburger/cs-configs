@@ -8,13 +8,12 @@ function MoveWindow {
     Start-Process "python" -ArgumentList $pythonScriptPath
 }
 
-# Get-Content -Path "F:\GitHub\cs-configs\launchers\gaben.txt" | ForEach-Object { Write-Output $_ }
-Write-Output "`n"
-Write-Host "       $(Get-Date -Format 'dddd, dd\/MM\/yyyy HH:mm')"
-Write-Output "`n"
-
 # Move window immediately upon script launch
 MoveWindow
+
+# Get-Content -Path "F:\GitHub\cs-configs\launchers\cs2.txt" | ForEach-Object { Write-Output $_ }
+Write-Host "      $(Get-Date -Format 'dddd, dd\/MM\/yyyy HH:mm')"
+Write-Output "`n"
 
 # Install PSMenu module if not already installed
 if (-not (Get-Module -ListAvailable -Name PSMenu)) {
@@ -42,70 +41,6 @@ function New-MenuItem([String]$DisplayName, [ScriptBlock]$Script) {
     Return $MenuItem
 }
 
-# 30 = set
-# 255 = not set
-function GetCS2Affinity {
-    $processName = "cs2"
-    while ($true) {
-        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-        if ($null -ne $process) {
-            $affinity = $process.ProcessorAffinity
-            Clear-Host
-            Write-Host "`nAffinity for $processName is $affinity." -ForegroundColor White
-
-            if ($affinity -eq 30) {
-                Write-Host "Affinity for cs2 has been set.`n" -ForegroundColor Green
-            }
-            elseif ($affinity -eq 255) {
-                Clear-Host
-                Write-Host "Affinity for cs2 has not been set.`n" -ForegroundColor Red
-            }
-
-            return
-        }
-    }
-}
-
-# Function to set CS2 affinity
-function SetCS2Affinity {
-    $processName = "cs2"
-    while ($true) {
-        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-        if ($null -ne $process) {
-            $process.PriorityClass = 'High'
-            $process.ProcessorAffinity = 0x000000000000001E
-            Clear-Host
-            Write-Host "Process priority and affinity set for $processName.`n" -ForegroundColor DarkCyan
-            break
-        }
-        Start-Sleep -Seconds 1
-    }
-}
-
-# Function to launch Counter-Strike 2
-function LaunchCS2 {
-    SetScreenResolution 1440 1080
-    $CS2SteamURL = "steam://launch/730"
-    Start-Process $CS2SteamURL
-    Clear-Host
-    Write-Host "`nCounter-Strike 2 has launched.`n" -ForegroundColor Green
-    Start-Sleep -Seconds 1
-    # Start-Sleep -Seconds 30
-    Start-PSTimer -Seconds 30 -clear
-    $processName = "cs2"
-    while ($true) {
-        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-        if ($null -ne $process) {
-            $process.PriorityClass = 'High'
-            $process.ProcessorAffinity = 0x000000000000001E
-            Clear-Host
-            Write-Host "Process priority and affinity set for $processName.`n" -ForegroundColor DarkCyan
-            break
-        }
-        Start-Sleep -Seconds 1
-    }
-}
-
 # Function to auto accept
 function AutoAccept {
     $aaScriptPath = "F:\GitHub\cs-configs\misc\aa\aa.bat"
@@ -127,22 +62,124 @@ function SetResolution {
     Write-Host "`nResolution set to 1440x1080.`n" -ForegroundColor DarkCyan
 }
 
+# 30 = set
+# 255 = not set
+function GetCS2Affinity {
+    $processName = "cs2"
+    while ($true) {
+        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+        if ($null -ne $process) {
+            $affinity = $process.ProcessorAffinity
+
+            if ($affinity -eq 30) {
+                Clear-Host
+                Write-Host "`n      Affinity for $processName has been set correctly.`n" -ForegroundColor Green
+            }
+            elseif ($affinity -eq 255) {
+                Clear-Host
+                Write-Host "Affinity for $processName has not been set.`n" -ForegroundColor Red
+            }
+            return
+        }
+        else {
+            Clear-Host
+            Write-Host "Counter-Strike 2 is not running.`n" -ForegroundColor Yellow
+        }
+        return
+    }
+}
+
+# Function to set CS2 affinity
+function SetCS2Affinity {
+    $processName = "cs2"
+    while ($true) {
+        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+        if ($null -ne $process) {
+            $process.PriorityClass = 'High'
+            $process.ProcessorAffinity = 0x000000000000001E
+            # Clear-Host
+            Write-Host "Process priority and affinity set for $processName." -ForegroundColor Green
+            break
+        }
+        else {
+            # Clear-Host
+            Write-Host "Counter-Strike 2 process did not initiate in time." -ForegroundColor Yellow
+        }
+        return
+    }
+}
+
+# Function to launch Counter-Strike 2
+function LaunchCS2 {
+    SetScreenResolution 1440 1080
+    $CS2SteamURL = "steam://launch/730"
+    Start-Process $CS2SteamURL
+    Write-Host "`nCounter-Strike 2 has launched." -ForegroundColor DarkGreen
+
+    # Wait for the process to start and set affinity
+    $processName = "cs2"
+    $startTime = Get-Date
+    $timeout = New-TimeSpan -Seconds 60  # Set a timeout to avoid infinite loop
+
+    while ($true) {
+        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+        if ($null -ne $process) {
+            $affinity = $process.ProcessorAffinity
+            if ($affinity -eq 255) {
+                SetCS2Affinity
+                break
+            }
+        }
+
+        # Check if timeout has been reached
+        if ((Get-Date) - $startTime -gt $timeout) {
+            Write-Host "Timeout reached. Counter-Strike 2 process did not initiate in time." -ForegroundColor Yellow
+            break
+        }
+
+        Start-Sleep -Seconds 1  # Wait for 1 second before checking again
+    }
+
+    # Start monitoring the affinity
+    $job = Start-Job -ScriptBlock {
+        param ($processName)
+        while ($true) {
+            $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+            if ($null -ne $process) {
+                $affinity = $process.ProcessorAffinity
+                if ($affinity -ne 30) {
+                    $process.PriorityClass = 'High'
+                    $process.ProcessorAffinity = 0x000000000000001E
+                    Write-Host "Affinity corrected for $processName." -ForegroundColor Green
+                }
+                else {
+                    break
+                }
+            }
+            Start-Sleep -Seconds 5  # Check every 5 seconds
+        }
+    } -ArgumentList $processName
+
+    # Wait for the job to complete
+    Wait-Job $job | Out-Null
+    Remove-Job $job
+}
+
 # Function to restart CS2
 function RestartCS2 {
     $process = Get-Process -Name cs2 -ErrorAction SilentlyContinue
     if ($null -ne $process) {
         Stop-Process -Name cs2 -Force
         Start-Sleep -Seconds 2
-        RestoreResolution
-        Write-Host "Exiting Counter-Strike 2...`n" -ForegroundColor White
+        # RestoreResolution
+        Clear-Host
+        Write-Host "`n      Restarting Counter-Strike 2...`n" -ForegroundColor Cyan
+        Start-Sleep -Seconds 5
+        LaunchCS2
     }
     else {
         Write-Host "Counter-Strike 2 is not running.`n" -ForegroundColor Yellow
     }
-    Start-Sleep -Seconds 5
-    $CS2SteamURL = "steam://launch/730"
-    Start-Process $CS2SteamURL
-    Write-Host "`nCounter-Strike 2 has restarted.`n" -ForegroundColor Green
 }
 
 # Function to close CS2
@@ -236,18 +273,16 @@ function ShowLineupsSubMenu {
 # Define menu options
 $Opts = @(
     $(New-MenuItem -DisplayName " Launch Counter-Strike 2" -Script { LaunchCS2 }),
-    $(Get-MenuSeparator)
-    $(New-MenuItem -DisplayName " Auto Accept" -Script { AutoAccept }),
     $(New-MenuItem -DisplayName " Open Lineups Menu" -Script { ShowLineupsSubMenu }),
+    $(New-MenuItem -DisplayName " Auto Accept" -Script { AutoAccept }),
     $(New-MenuItem -DisplayName " Check Affinity" -Script { GetCS2Affinity }),
     $(New-MenuItem -DisplayName " Set Affinity" -Script { SetCS2Affinity }),
-    $(New-MenuItem -DisplayName " Move Terminal" -Script { MoveWindow }),
     $(New-MenuItem -DisplayName " Restore Resolution" -Script { RestoreResolution }),
     $(New-MenuItem -DisplayName " Set Resolution" -Script { SetResolution }),
+    $(New-MenuItem -DisplayName " Reload Script" -Script { ReloadScript }),
     $(Get-MenuSeparator)
     $(New-MenuItem -DisplayName " Restart CS2" -Script { RestartCS2 }),
-    $(New-MenuItem -DisplayName " Close CS2" -Script { CloseCS2 }),
-    $(New-MenuItem -DisplayName " Reload Script" -Script { ReloadScript }), # Add this line
+    $(New-MenuItem -DisplayName " Exit CS2" -Script { CloseCS2 }),
     $(New-MenuItem -DisplayName " Exit Script" -Script {
             break
         })
@@ -255,17 +290,11 @@ $Opts = @(
 
 # Show the interactive menu
 while ($true) {
-    $Chosen = Show-Menu -MenuItems $Opts -ItemFocusColor Green
+    $Chosen = Show-Menu -MenuItems $Opts -ItemFocusColor Yellow
     & $Chosen.Script
     if ($Chosen.DisplayName -eq "Exit") {
         break
     }
 }
-
-# $pythonScriptPath = "F:\GitHub\cs-configs\launchers\cs2-movewindow.py"
-# Clear-Host
-# Start-Process "python" -ArgumentList $pythonScriptPath
-
-
 
 # End of script

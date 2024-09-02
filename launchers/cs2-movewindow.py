@@ -25,7 +25,7 @@ secondary_monitor_height = secondary_monitor_rect[3] - secondary_monitor_rect[1]
 
 # Calculate the bottom right corner coordinates
 bottom_right_x = (
-    secondary_monitor_coords[0] + secondary_monitor_width - 700
+    secondary_monitor_coords[0] + secondary_monitor_width - 480
 )  # Adjust width as needed
 bottom_right_y = (
     secondary_monitor_coords[1] + secondary_monitor_height - 450
@@ -43,7 +43,7 @@ if hwnd:
         hwnd,
         bottom_right_x,
         bottom_right_y,
-        700,  # Adjust width as needed
+        350,  # Adjust width as needed
         400,  # Adjust height as needed
         True,
     )
