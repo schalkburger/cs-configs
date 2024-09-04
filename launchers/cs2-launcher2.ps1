@@ -97,7 +97,7 @@ function SetCS2Affinity {
         if ($null -ne $process) {
             $process.PriorityClass = 'High'
             $process.ProcessorAffinity = 0x000000000000001E
-            # Clear-Host
+            Clear-Host
             Write-Host "Process priority and affinity set for $processName." -ForegroundColor Green
             break
         }
@@ -114,55 +114,8 @@ function LaunchCS2 {
     SetScreenResolution 1440 1080
     $CS2SteamURL = "steam://launch/730"
     Start-Process $CS2SteamURL
+    Clear-Host
     Write-Host "`nCounter-Strike 2 has launched." -ForegroundColor DarkGreen
-
-    # Wait for the process to start and set affinity
-    $processName = "cs2"
-    $startTime = Get-Date
-    $timeout = New-TimeSpan -Seconds 60  # Set a timeout to avoid infinite loop
-
-    while ($true) {
-        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-        if ($null -ne $process) {
-            $affinity = $process.ProcessorAffinity
-            if ($affinity -eq 255) {
-                SetCS2Affinity
-                break
-            }
-        }
-
-        # Check if timeout has been reached
-        if ((Get-Date) - $startTime -gt $timeout) {
-            Write-Host "Timeout reached. Counter-Strike 2 process did not initiate in time." -ForegroundColor Yellow
-            break
-        }
-
-        Start-Sleep -Seconds 1  # Wait for 1 second before checking again
-    }
-
-    # Start monitoring the affinity
-    $job = Start-Job -ScriptBlock {
-        param ($processName)
-        while ($true) {
-            $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-            if ($null -ne $process) {
-                $affinity = $process.ProcessorAffinity
-                if ($affinity -ne 30) {
-                    $process.PriorityClass = 'High'
-                    $process.ProcessorAffinity = 0x000000000000001E
-                    Write-Host "Affinity corrected for $processName." -ForegroundColor Green
-                }
-                else {
-                    break
-                }
-            }
-            Start-Sleep -Seconds 5  # Check every 5 seconds
-        }
-    } -ArgumentList $processName
-
-    # Wait for the job to complete
-    Wait-Job $job | Out-Null
-    Remove-Job $job
 }
 
 # Function to restart CS2

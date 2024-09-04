@@ -23,11 +23,9 @@ secondary_monitor_rect = secondary_monitor_info["Monitor"]
 secondary_monitor_width = secondary_monitor_rect[2] - secondary_monitor_rect[0]
 secondary_monitor_height = secondary_monitor_rect[3] - secondary_monitor_rect[1]
 
-# Calculate the bottom right corner coordinates
-bottom_right_x = (
-    secondary_monitor_coords[0] + secondary_monitor_width - 480
-)  # Adjust width as needed
-bottom_right_y = (
+# Calculate the bottom left corner coordinates
+bottom_left_x = secondary_monitor_coords[0]
+bottom_left_y = (
     secondary_monitor_coords[1] + secondary_monitor_height - 450
 )  # Adjust height as needed
 
@@ -38,12 +36,12 @@ time.sleep(1)  # Adjust the sleep time if necessary
 hwnd = win32gui.FindWindow("CASCADIA_HOSTING_WINDOW_CLASS", None)
 
 if hwnd:
-    # Move the window to the bottom right corner of the secondary monitor
+    # Move the window to the bottom left corner of the secondary monitor
     win32gui.MoveWindow(
         hwnd,
-        bottom_right_x,
-        bottom_right_y,
-        350,  # Adjust width as needed
+        bottom_left_x,
+        bottom_left_y,
+        500,  # Adjust width as needed
         400,  # Adjust height as needed
         True,
     )
