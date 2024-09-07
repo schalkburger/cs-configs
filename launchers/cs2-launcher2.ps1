@@ -228,8 +228,6 @@ $Opts = @(
     $(New-MenuItem -DisplayName " Launch Counter-Strike 2" -Script { LaunchCS2 }),
     $(New-MenuItem -DisplayName " Open Lineups Menu" -Script { ShowLineupsSubMenu }),
     $(New-MenuItem -DisplayName " Auto Accept" -Script { AutoAccept }),
-    $(New-MenuItem -DisplayName " Check Affinity" -Script { GetCS2Affinity }),
-    $(New-MenuItem -DisplayName " Set Affinity" -Script { SetCS2Affinity }),
     $(New-MenuItem -DisplayName " Restore Resolution" -Script { RestoreResolution }),
     $(New-MenuItem -DisplayName " Set Resolution" -Script { SetResolution }),
     $(New-MenuItem -DisplayName " Reload Script" -Script { ReloadScript }),
