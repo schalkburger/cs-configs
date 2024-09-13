@@ -12,7 +12,7 @@ function MoveWindow {
 MoveWindow
 
 # Get-Content -Path "F:\GitHub\cs-configs\launchers\cs2.txt" | ForEach-Object { Write-Output $_ }
-Write-Host "      $(Get-Date -Format 'dddd, dd\/MM\/yyyy HH:mm')"
+# Write-Host "      $(Get-Date -Format 'dddd, dd\/MM\/yyyy HH:mm')"
 Write-Output "`n"
 
 # Install PSMenu module if not already installed
