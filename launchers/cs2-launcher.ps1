@@ -58,7 +58,31 @@ function LaunchCS2 {
     $CS2SteamURL = "steam://launch/730"
     Start-Process $CS2SteamURL
     Clear-Host
-    Write-Host "`nCounter-Strike 2 has launched." -ForegroundColor DarkGreen
+    Write-Host "`nCounter-Strike 2 has launched.`n" -ForegroundColor DarkGreen
+}
+
+# Function to launch Counter-Strike 2 windowed
+function LaunchCS2Windowed {
+    $steamPath = "F:\Steam\steam.exe"
+    $arguments = "-applaunch 730 -window -sw -console -condebug -conclearlog -w 1600 -h 900"
+
+    # Start the process with the specified arguments
+    Start-Process -FilePath $steamPath -ArgumentList $arguments -WindowStyle Hidden
+
+    Clear-Host
+    Write-Host "`nCounter-Strike 2 has launched windowed.`n" -ForegroundColor DarkGreen
+}
+
+# Function to launch Counter-Strike 2 windowed
+function LaunchCS2WindowedInsecure {
+    $steamPath = "F:\Steam\steam.exe"
+    $arguments = "-applaunch 730 -window -sw -console -insecure -condebug -conclearlog -w 1600 -h 900"
+
+    # Start the process with the specified arguments
+    Start-Process -FilePath $steamPath -ArgumentList $arguments -WindowStyle Hidden
+
+    Clear-Host
+    Write-Host "`nCounter-Strike 2 has launched windowed insecure.`n" -ForegroundColor DarkGreen
 }
 
 # Function to restart CS2
@@ -85,7 +109,7 @@ function CloseCS2 {
         Stop-Process -Name cs2 -Force
         Start-Sleep -Seconds 2
         RestoreResolution
-        Write-Host "Exiting Counter-Strike 2...`n" -ForegroundColor White
+        Write-Host "Closing Counter-Strike 2...`n" -ForegroundColor White
     }
     else {
         RestoreResolution
@@ -169,12 +193,14 @@ function ShowLineupsSubMenu {
 # Define menu options
 $Opts = @(
     $(New-MenuItem -DisplayName " Launch Counter-Strike 2" -Script { LaunchCS2 }),
+    $(New-MenuItem -DisplayName " Launch Counter-Strike 2 Windowed" -Script { LaunchCS2Windowed }),
+    $(New-MenuItem -DisplayName " Launch Counter-Strike 2 Windowed Insecure" -Script { LaunchCS2WindowedInsecure }),
     $(New-MenuItem -DisplayName " Open Lineups Menu" -Script { ShowLineupsSubMenu }),
     $(New-MenuItem -DisplayName " Auto Accept" -Script { AutoAccept }),
-    $(New-MenuItem -DisplayName " Restore Resolution" -Script { RestoreResolution }),
-    $(New-MenuItem -DisplayName " Set Resolution" -Script { SetResolution }),
-    $(New-MenuItem -DisplayName " Reload Script" -Script { ReloadScript }),
+    $(New-MenuItem -DisplayName " Set Native Resolution" -Script { RestoreResolution }),
+    $(New-MenuItem -DisplayName " Set CS2 Resolution" -Script { SetResolution }),
     $(Get-MenuSeparator)
+    $(New-MenuItem -DisplayName " Reload Script" -Script { ReloadScript }),
     $(New-MenuItem -DisplayName " Restart CS2" -Script { RestartCS2 }),
     $(New-MenuItem -DisplayName " Exit CS2" -Script { CloseCS2 }),
     $(New-MenuItem -DisplayName " Exit Script" -Script {
