@@ -64,7 +64,7 @@ function LaunchCS2 {
 # Function to restart CS2
 function RestartCS2 {
     $process = Get-Process -Name cs2 -ErrorAction SilentlyContinue
-    if ($null -ne $process) {
+    if ($sound-null -ne $process) {
         Stop-Process -Name cs2 -Force
         Start-Sleep -Seconds 2
         # RestoreResolution
@@ -81,7 +81,7 @@ function RestartCS2 {
 # Function to close CS2
 function CloseCS2 {
     $process = Get-Process -Name cs2 -ErrorAction SilentlyContinue
-    if ($null -ne $process) {
+    if ($sound-null -ne $process) {
         Stop-Process -Name cs2 -Force
         Start-Sleep -Seconds 2
         RestoreResolution

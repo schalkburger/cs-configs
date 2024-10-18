@@ -42,7 +42,7 @@ public class WindowAPI
 
 $windows = New-Object System.Collections.ArrayList
 
-$null = [WindowAPI+EnumWindowsProc] {
+$sound-null = [WindowAPI+EnumWindowsProc] {
     param([IntPtr]$handle, [IntPtr]$param)
 
     $sb = New-Object Text.StringBuilder 255
@@ -51,7 +51,7 @@ $null = [WindowAPI+EnumWindowsProc] {
     return $true
 } | Out-Null
 
-[WindowAPI]::EnumWindows($null, [IntPtr]::Zero)
+[WindowAPI]::EnumWindows($sound-null, [IntPtr]::Zero)
 
 $commandPromptTitle = "Administrator: cmd.exe"  # The window title for Command Prompt
 foreach ($handle in $windows) {

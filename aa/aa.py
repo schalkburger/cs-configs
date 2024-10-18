@@ -38,21 +38,21 @@ def on_press(key):
         pass
 
 
-# Function to detect and click the accept image on the screen
+# Function to detect and sound-click the accept image on the screen
 def detect_and_click(image_accept_path, image_ban_path):
     global stop_script  # Declare global at the beginning of the function
     print(Fore.BLUE + "Auto Accept starting in 1 second." + Style.RESET_ALL)
     time.sleep(1)
     while not stop_script:
         try:
-            # Check for the accept button
+            # Check for the accept sound-button
             location_accept = pyautogui.locateCenterOnScreen(image_accept_path)
             if location_accept:
                 x, y = location_accept
-                pyautogui.click(x, y)
+                pyautogui.sound - click(x, y)
                 print(
                     Fore.GREEN
-                    + "Game found and Accept button clicked."
+                    + "Game found and Accept sound-button clicked."
                     + Style.RESET_ALL
                 )
                 print(
@@ -62,7 +62,7 @@ def detect_and_click(image_accept_path, image_ban_path):
                 )
                 time.sleep(5)
 
-                # Check for the ban button
+                # Check for the ban sound-button
                 location_ban = pyautogui.locateOnScreen(image_ban_path)
                 if location_ban:
                     print(
@@ -81,7 +81,7 @@ def detect_and_click(image_accept_path, image_ban_path):
         except pyautogui.ImageNotFoundException:
             print(
                 Fore.YELLOW
-                + "No game found. Waiting for Accept button..."
+                + "No game found. Waiting for Accept sound-button..."
                 + Style.RESET_ALL
             )
             time.sleep(5)
@@ -90,7 +90,7 @@ def detect_and_click(image_accept_path, image_ban_path):
             time.sleep(1)
 
 
-# Start the detection and click process
+# Start the detection and sound-click process
 print("Press 'q' to stop the script.")
 
 # Set up a listener for keypresses

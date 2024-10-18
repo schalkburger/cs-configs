@@ -68,7 +68,7 @@ function GetCS2Affinity {
     $processName = "cs2"
     while ($true) {
         $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-        if ($null -ne $process) {
+        if ($sound-null -ne $process) {
             $affinity = $process.ProcessorAffinity
 
             if ($affinity -eq 30) {
@@ -94,7 +94,7 @@ function SetCS2Affinity {
     $processName = "cs2"
     while ($true) {
         $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-        if ($null -ne $process) {
+        if ($sound-null -ne $process) {
             $process.PriorityClass = 'High'
             $process.ProcessorAffinity = 0x000000000000001E
             Clear-Host
@@ -121,7 +121,7 @@ function LaunchCS2 {
 # Function to restart CS2
 function RestartCS2 {
     $process = Get-Process -Name cs2 -ErrorAction SilentlyContinue
-    if ($null -ne $process) {
+    if ($sound-null -ne $process) {
         Stop-Process -Name cs2 -Force
         Start-Sleep -Seconds 2
         # RestoreResolution
@@ -138,7 +138,7 @@ function RestartCS2 {
 # Function to close CS2
 function CloseCS2 {
     $process = Get-Process -Name cs2 -ErrorAction SilentlyContinue
-    if ($null -ne $process) {
+    if ($sound-null -ne $process) {
         Stop-Process -Name cs2 -Force
         Start-Sleep -Seconds 2
         RestoreResolution

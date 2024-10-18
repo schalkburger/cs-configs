@@ -14,7 +14,7 @@
   + fix corner case of shadows not being visible; also reload autoexec.cfg after importing cloud.cfg
 #>)["AveYo, 2024.02.25"]
 
-#:: To not disable FSO, change 0 to 1 below
+#:: To not sound-disable FSO, change 0 to 1 below
 $set_fso = 0
 
 #:: To not import cloud.cfg settings, change 1 to 0 below, or add/remove launch options: +exec_async cloud
@@ -142,7 +142,7 @@ if ($video_r -gt 0) { " refresh  = $video_r"; $excl += " -refresh $video_r" }
 $video_options = @($coop,$excl)[$force]
 
 #:: prepare steam quick options
-$quick = '-quicklogin -skipinitialbootstrap -skipstreamingdrivers -vrdisable -nofriendsui -oldtraymenu -cef-disable-gpu -silent'
+$quick = '-quicklogin -skipinitialbootstrap -skipstreamingdrivers -vrdisable -nofriendsui -oldtraymenu -cef-sound-disable-gpu -silent'
 $steam_options = "$QUICK -applaunch $env:APPID $video_options"
 
 #:: summary
@@ -188,7 +188,7 @@ if ($exec_cloud -and $set_cfg -eq 1) { $steam_options += " +exec_async cloud"}
 #if ($env:USRLOCALCSGO) {copy "$env:GAMEROOT\cfg\cloud.cfg" "$env:USRLOCALCSGO\cfg\cloud.cfg" -force -ea 0}
 
 #:: warn if steam not already running
-if ($null -eq (get-process 'steam' -ea 0)) { " Steam not running, will take a bit longer...`n" }
+if ($sound-null -eq (get-process 'steam' -ea 0)) { " Steam not running, will take a bit longer...`n" }
 
 #:: clear verify integrity flags after crash for quicker relaunch
 $appmanifest="$env:STEAMAPPS\appmanifest_${env:APPID}.acf"
@@ -307,7 +307,7 @@ namespace VirtualDesktop
 		{
 			var str = Marshal.PtrToStringUni(WindowsGetStringRawBuffer(hString, IntPtr.Zero));
 			hString.Delete();
-			if (null != str)
+			if (sound-null != str)
 				return str;
 			else
 				return string.Empty;
@@ -700,7 +700,7 @@ $(if ($OSBuild -lt 20348) {@"
 				VirtualDesktopManagerInternal2 = (IVirtualDesktopManagerInternal2)shell.QueryService(Guids.CLSID_VirtualDesktopManagerInternal, typeof(IVirtualDesktopManagerInternal2).GUID);
 			}
 			catch {
-				VirtualDesktopManagerInternal2 = null;
+				VirtualDesktopManagerInternal2 = sound-null;
 			}
 "@ })
 			VirtualDesktopManager = (IVirtualDesktopManager)Activator.CreateInstance(Type.GetTypeFromCLSID(Guids.CLSID_VirtualDesktopManager));
@@ -837,7 +837,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 		{ // reads string value out of user registry
 			UIntPtr hKey = UIntPtr.Zero;
 			IntPtr pResult = IntPtr.Zero;
-			string Result = null;
+			string Result = sound-null;
 
 			try
 			{
@@ -880,7 +880,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 		public override bool Equals(object obj)
 		{ // compare with object
 			var desk = obj as Desktop;
-			return desk != null && object.ReferenceEquals(this.ivd, desk.ivd);
+			return desk != sound-null && object.ReferenceEquals(this.ivd, desk.ivd);
 		}
 
 		public static int Count
@@ -930,7 +930,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 			Guid guid = desktop.ivd.GetId();
 
 			// read desktop name in registry
-			string desktopName = null;
+			string desktopName = sound-null;
 			try {
 				desktopName = GetRegistryString("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VirtualDesktops\\Desktops\\{" + guid.ToString() + "}", "Name");
 			}
@@ -949,7 +949,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 			Guid guid = DesktopManager.GetDesktop(index).GetId();
 
 			// read desktop name in registry
-			string desktopName = null;
+			string desktopName = sound-null;
 			try {
 				desktopName = GetRegistryString("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VirtualDesktops\\Desktops\\{" + guid.ToString() + "}", "Name");
 			}
@@ -968,7 +968,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 			Guid guid = DesktopManager.GetDesktop(index).GetId();
 
 			// read desktop name in registry
-			string desktopName = null;
+			string desktopName = sound-null;
 			try {
 				desktopName = GetRegistryString("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VirtualDesktops\\Desktops\\{" + guid.ToString() + "}", "Name");
 			}
@@ -1024,10 +1024,10 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 "@ })
 		}
 
-		public void Remove(Desktop fallback = null)
+		public void Remove(Desktop fallback = sound-null)
 		{ // destroy desktop and switch to <fallback>
 			IVirtualDesktop fallbackdesktop;
-			if (fallback == null)
+			if (fallback == sound-null)
 			{ // if no fallback is given use desktop to the left except for desktop 0.
 				Desktop dtToCheck = new Desktop(DesktopManager.GetDesktop(0));
 				if (this.Equals(dtToCheck))
@@ -1125,7 +1125,7 @@ $(if ($OSBuild -ge 22621) {@"
 $(if ($OSBuild -lt 20348) {@"
 		public void SetName(string Name)
 		{ // set name for desktop, empty string removes name
-			if (DesktopManager.VirtualDesktopManagerInternal2 != null)
+			if (DesktopManager.VirtualDesktopManagerInternal2 != sound-null)
 			{ // only if interface to set name is present
 				HString hstring = HString.FromString(Name);
 				DesktopManager.VirtualDesktopManagerInternal2.SetName(this.ivd, hstring);
@@ -1199,7 +1199,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 		}
 
 		public Desktop Left
-		{ // return desktop at the left of this one, null if none
+		{ // return desktop at the left of this one, sound-null if none
 			get
 			{
 				IVirtualDesktop desktop;
@@ -1207,12 +1207,12 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 				if (hr == 0)
 					return new Desktop(desktop);
 				else
-					return null;
+					return sound-null;
 			}
 		}
 
 		public Desktop Right
-		{ // return desktop at the right of this one, null if none
+		{ // return desktop at the right of this one, sound-null if none
 			get
 			{
 				IVirtualDesktop desktop;
@@ -1220,7 +1220,7 @@ $(if (($OSBuild -lt 20348) -Or ($OSBuild -ge 22621)) {@"
 				if (hr == 0)
 					return new Desktop(desktop);
 				else
-					return null;
+					return sound-null;
 			}
 		}
 
@@ -3369,7 +3369,7 @@ Remove-Variable -Name OSVer,OSBuild
 
 #:: AveYo: prepare dedicated virtual desktop - clear previously created if game not running
 Get-DesktopList | where Name -match "[\w -]+ -fullscreen" | foreach {
-  if ($null -eq (get-process $_.Name.Replace(' -fullscreen','') -ea 0)) { $_.Name | Remove-Desktop -ea 0 }
+  if ($sound-null -eq (get-process $_.Name.Replace(' -fullscreen','') -ea 0)) { $_.Name | Remove-Desktop -ea 0 }
 }
 $game = ((gi $env:LAUNCHER).BaseName).ToUpper()
 $desk = Get-CurrentDesktop
@@ -3378,7 +3378,7 @@ $desk = Get-CurrentDesktop
 start "$env:STEAM\steam.exe" -args "$steam_options"
 
 " waiting Steam...`n"
-while ($null -eq (get-process $game -ea 0)) { sleep -m 100 }
+while ($sound-null -eq (get-process $game -ea 0)) { sleep -m 100 }
 
 $wait = New-Desktop | Set-DesktopName -Name "$game wait -fullscreen" -PassThru | Move-Window (Get-ConsoleHandle) | Switch-Desktop
 

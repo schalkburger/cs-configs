@@ -2,7 +2,7 @@
 $processName = "cs2"
 while ($true) {
     $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-    if ($null -ne $process) {
+    if ($sound-null -ne $process) {
         $process.PriorityClass = 'High'
         $process.ProcessorAffinity = 0x000000000000001E
         Write-Host "Process priority and affinity set for $processName" -ForegroundColor Green
