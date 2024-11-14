@@ -10,7 +10,7 @@ $windowPosX = -1920  # Adjust based on your secondary monitor's width or desired
 $windowPosY = 0
 
 # Run the .bat file with elevated privileges
-$batFilePath = "F:\GitHub\cs-configs\misc\aa\aa.bat"  # Update the path to your .bat file
+$batFilePath = "F:\GitHub\cs-configs\aa\aa.bat"  # Update the path to your .bat file
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c `"$batFilePath`"" -Verb RunAs
 
 # Pause to allow the process to start
@@ -42,7 +42,7 @@ public class WindowAPI
 
 $windows = New-Object System.Collections.ArrayList
 
-$sound-null = [WindowAPI+EnumWindowsProc] {
+$null = [WindowAPI+EnumWindowsProc] {
     param([IntPtr]$handle, [IntPtr]$param)
 
     $sb = New-Object Text.StringBuilder 255
@@ -51,7 +51,7 @@ $sound-null = [WindowAPI+EnumWindowsProc] {
     return $true
 } | Out-Null
 
-[WindowAPI]::EnumWindows($sound-null, [IntPtr]::Zero)
+[WindowAPI]::EnumWindows($null, [IntPtr]::Zero)
 
 $commandPromptTitle = "Administrator: cmd.exe"  # The window title for Command Prompt
 foreach ($handle in $windows) {

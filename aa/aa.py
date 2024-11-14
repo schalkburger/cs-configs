@@ -62,7 +62,7 @@ def detect_and_click(image_accept_path, image_ban_path):
                 )
                 time.sleep(5)
 
-                # Check for the ban sound-button
+                # Check for the ban button
                 location_ban = pyautogui.locateOnScreen(image_ban_path)
                 if location_ban:
                     print(
@@ -81,7 +81,7 @@ def detect_and_click(image_accept_path, image_ban_path):
         except pyautogui.ImageNotFoundException:
             print(
                 Fore.YELLOW
-                + "No game found. Waiting for Accept sound-button..."
+                + "No game found. Waiting for Accept button..."
                 + Style.RESET_ALL
             )
             time.sleep(5)

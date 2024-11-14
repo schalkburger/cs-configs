@@ -1,9 +1,9 @@
 # Read and display the ASCII art from the file
 Clear-Host
 
-# Get-Content -Path "F:\GitHub\cs-configs\launchers\cs2.txt" | ForEach-Object { Write-Output $_ }
+Get-Content -Path "F:\GitHub\cs-configs\launchers\cs2.txt" | ForEach-Object { Write-Output $_ }
 # Write-Host "      $(Get-Date -Format 'dddd, dd\/MM\/yyyy HH:mm')"
-Write-Output "`n"
+# Write-Output "`n"
 
 # Install PSMenu module if not already installed
 if (-not (Get-Module -ListAvailable -Name PSMenu)) {
@@ -33,7 +33,7 @@ function New-MenuItem([String]$DisplayName, [ScriptBlock]$Script) {
 
 # Function to auto accept
 function AutoAccept {
-    $aaScriptPath = "F:\GitHub\cs-configs\misc\aa\aa.bat"
+    $aaScriptPath = "F:\GitHub\cs-configs\aa\aa.bat"
     Clear-Host
     Start-Process $aaScriptPath
 }
@@ -182,7 +182,7 @@ function ShowLineupsSubMenu {
     )
 
     while ($true) {
-        $Chosen = Show-Menu -MenuItems $LineupsOpts -ItemFocusColor Blue
+        $Chosen = Show-Menu -MenuItems $LineupsOpts -ItemFocusColor Yellow
         if ($Chosen -eq "back") {
             break
         }
@@ -192,16 +192,16 @@ function ShowLineupsSubMenu {
 
 # Define menu options
 $Opts = @(
-    $(New-MenuItem -DisplayName " Launch Counter-Strike 2" -Script { LaunchCS2 }),
-    $(New-MenuItem -DisplayName " Launch Counter-Strike 2 Windowed" -Script { LaunchCS2Windowed }),
-    $(New-MenuItem -DisplayName " Launch Counter-Strike 2 Windowed Insecure" -Script { LaunchCS2WindowedInsecure }),
-    $(New-MenuItem -DisplayName " Open Lineups Menu" -Script { ShowLineupsSubMenu }),
+    $(New-MenuItem -DisplayName " Play CS2" -Script { LaunchCS2 }),
     $(New-MenuItem -DisplayName " Auto Accept" -Script { AutoAccept }),
+    $(New-MenuItem -DisplayName " Open Lineups Menu" -Script { ShowLineupsSubMenu }),
     $(New-MenuItem -DisplayName " Set Native Resolution" -Script { RestoreResolution }),
     $(New-MenuItem -DisplayName " Set CS2 Resolution" -Script { SetResolution }),
+    $(New-MenuItem -DisplayName " CS2 Windowed" -Script { LaunchCS2Windowed }),
+    $(New-MenuItem -DisplayName " CS2 Windowed Insecure" -Script { LaunchCS2WindowedInsecure }),
+    $(New-MenuItem -DisplayName " Restart CS2" -Script { RestartCS2 }),
     $(Get-MenuSeparator)
     $(New-MenuItem -DisplayName " Reload Script" -Script { ReloadScript }),
-    $(New-MenuItem -DisplayName " Restart CS2" -Script { RestartCS2 }),
     $(New-MenuItem -DisplayName " Exit CS2" -Script { CloseCS2 }),
     $(New-MenuItem -DisplayName " Exit Script" -Script {
             break
