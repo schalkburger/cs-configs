@@ -63,7 +63,7 @@ function LaunchCS2 {
 
 # Function to launch Counter-Strike 2 windowed
 function LaunchCS2Windowed {
-    $steamPath = "F:\Steam\steam.exe"
+    $steamPath = "F:\SteamLibrary\steam.exe"
     $arguments = "-applaunch 730 -window -sw -console -condebug -conclearlog -w 1600 -h 900"
 
     # Start the process with the specified arguments
@@ -75,7 +75,7 @@ function LaunchCS2Windowed {
 
 # Function to launch Counter-Strike 2 windowed
 function LaunchCS2WindowedInsecure {
-    $steamPath = "F:\Steam\steam.exe"
+    $steamPath = "F:\SteamLibrary\steam.exe"
     $arguments = "-applaunch 730 -window -sw -console -insecure -condebug -conclearlog -w 1600 -h 900"
 
     # Start the process with the specified arguments

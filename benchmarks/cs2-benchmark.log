@@ -1375,3 +1375,130 @@ Fullscreen Windowed, 4:3, 1440x1080, Boost Player Contrast 1, NVIDIA Reflex Low 
 [VProf]
 [VProf] VProfLite stopped.
 [WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 11.838214ms
+
+
+2025-02-04-22:00:00
+Fullscreen, 4:3, 1440x1080, Boost Player Contrast 1, NVIDIA Reflex Low Latency 1, Multisampling Anti-Aliasing Mode 0
+
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 26154 frames and 115 1-second intervals.  (2179 frames excluded from analysis.)
+[VProf] FPS: Avg=230.0, P1=103.8
+[VProf]
+[VProf]                         All frames         Active frames       1s max (all)      1s max (active)
+[VProf]                           Avg    P99        N    Avg    P99      P50    P95        N    P50    P95
+[VProf] ---------------------- ------ ------   ------ ------ ------   ------ ------   ------ ------ ------
+[VProf]             FrameTotal   4.35   9.63    26154   4.35   9.63     8.66  11.83      115   8.66  11.83
+[VProf]       Client Rendering   2.02   3.13    26154   2.02   3.13     2.74   4.46      115   2.74   4.46
+[VProf]         Frame Boundary   1.45   2.25    26154   1.45   2.25     2.13   3.71      115   2.13   3.71
+[VProf]      Client Simulation   0.75   2.40    26154   0.75   2.40     1.88   2.96      115   1.88   2.96
+[VProf]      Server Simulation   0.59   2.94     7270   2.13   3.21     2.76   3.94      115   2.76   3.94
+[VProf]    ClientSimulateFrame   0.52   1.15    26154   0.52   1.15     0.82   1.49      115   0.82   1.49
+[VProf]            Server Game   0.47   2.21     7270   1.70   2.70     2.28   3.35      115   2.28   3.35
+[VProf]             Prediction   0.38   1.53    26154   0.38   1.53     1.30   1.97      115   1.30   1.97
+[VProf]        LowLatencySleep   0.26   3.01    26154   0.26   3.01     0.47   3.35      115   0.47   3.35
+[VProf]    Client Input/Output   0.25   1.02    26154   0.25   1.02     0.92   1.36      115   0.92   1.36
+[VProf]     ClientSimulateTick   0.23   1.26     7270   0.83   1.41     1.15   1.79      115   1.15   1.79
+[VProf]           UserCommands   0.21   1.01     7270   0.74   1.18     1.11   1.49      115   1.11   1.49
+[VProf]             PanoramaUI   0.19   0.32    26154   0.19   0.32     0.39   0.81      115   0.39   0.81
+[VProf]                    HUD   0.18   0.30    26154   0.18   0.30     0.34   0.47      115   0.34   0.47
+[VProf]            Unaccounted   0.16   0.49    26154   0.16   0.49     0.50   0.73      115   0.50   0.73
+[VProf]          Interpolation   0.11   0.25    26154   0.11   0.25     0.25   0.37      115   0.25   0.37
+[VProf]       Client_Animation   0.09   0.44     7270   0.32   0.49     0.42   0.63      115   0.42   0.63
+[VProf]                   NPCs   0.08   0.41     7270   0.28   0.50     0.46   1.13      115   0.46   1.13
+[VProf]       Server Animation   0.07   0.33     7270   0.25   0.36     0.36   0.49      115   0.36   0.49
+[VProf] Server Send Networking   0.07   0.33     7270   0.24   0.35     0.36   0.54      115   0.36   0.54
+[VProf]   Present_RenderDevice   0.06   0.57    26154   0.06   0.57     0.17   1.52      115   0.17   1.52
+[VProf]             Networking   0.06   0.32     7273   0.21   0.38     0.39   1.04      115   0.39   1.04
+[VProf]    Server PackEntities   0.05   0.22     7270   0.17   0.26     0.25   0.44      115   0.25   0.44
+[VProf]     InterpolationLatch   0.04   0.17     7270   0.13   0.20     0.21   0.26      115   0.21   0.26
+[VProf]                  Magic   0.00   0.00      330   0.15   0.44     0.00   0.39       40   0.26   0.44
+[VProf]             FileSystem   0.00   0.00        4   0.11   0.15     0.00   0.00        4   0.13   0.14
+[VProf]
+[VProf] VProfLite stopped.
+[BuildSparseShadowTree] CSparseShadowTreeGameSystem::GameShutdown
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 14.714020ms
+
+2025-02-04-22:15:00
+Fullscreen, 4:3, 1440x1080, Boost Player Contrast 1, NVIDIA Reflex Low Latency 1, Multisampling Anti-Aliasing Mode 0
+
+https://old.reddit.com/r/GlobalOffensive/comments/1dzci78/disabling_core_0_fps_boost/
+
+[VProf] -- Performance report --
+[VProf] Summary of 27836 frames and 115 1-second intervals.  (2285 frames excluded from analysis.)
+[VProf] FPS: Avg=244.8, P1=117.1
+[VProf]
+[VProf]                         All frames         Active frames       1s max (all)      1s max (active)
+[VProf]                           Avg    P99        N    Avg    P99      P50    P95        N    P50    P95
+[VProf] ---------------------- ------ ------   ------ ------ ------   ------ ------   ------ ------ ------
+[VProf]             FrameTotal   4.08   8.54    27836   4.08   8.54     7.94  11.04      115   7.94  11.04
+[VProf]       Client Rendering   1.98   2.87    27836   1.98   2.87     2.83   4.53      115   2.83   4.53
+[VProf]         Frame Boundary   1.42   2.40    27836   1.42   2.40     2.24   3.75      115   2.24   3.75
+[VProf]      Client Simulation   0.67   1.64    27836   0.67   1.64     1.71   2.41      115   1.71   2.41
+[VProf]      Server Simulation   0.50   2.33     7270   1.92   2.65     2.52   3.42      115   2.52   3.42
+[VProf]    ClientSimulateFrame   0.47   0.72    27836   0.47   0.72     0.72   1.09      115   0.72   1.09
+[VProf]            Server Game   0.40   2.00     7270   1.54   2.21     2.07   2.87      115   2.07   2.87
+[VProf]             Prediction   0.32   1.11    27836   0.32   1.11     1.15   1.58      115   1.15   1.58
+[VProf]        LowLatencySleep   0.30   3.36    27836   0.30   3.36     0.59   3.52      115   0.59   3.52
+[VProf]    Client Input/Output   0.22   0.86    27836   0.22   0.86     0.83   1.13      115   0.83   1.13
+[VProf]     ClientSimulateTick   0.20   1.07     7270   0.77   1.19     1.05   1.41      115   1.05   1.41
+[VProf]             PanoramaUI   0.18   0.30    27836   0.18   0.30     0.33   0.70      115   0.33   0.70
+[VProf]           UserCommands   0.17   0.89     7270   0.66   0.97     0.95   1.30      115   0.95   1.30
+[VProf]                    HUD   0.17   0.24    27836   0.17   0.24     0.24   0.77      115   0.24   0.77
+[VProf]            Unaccounted   0.14   0.43    27836   0.14   0.43     0.41   0.59      115   0.41   0.59
+[VProf]       Client_Animation   0.08   0.37     7270   0.30   0.42     0.37   0.52      115   0.37   0.52
+[VProf]   Present_RenderDevice   0.07   0.66    27836   0.07   0.66     0.18   1.60      115   0.18   1.60
+[VProf]                   NPCs   0.07   0.32     7270   0.26   0.33     0.35   0.89      115   0.35   0.89
+[VProf]       Server Animation   0.06   0.31     7270   0.24   0.35     0.33   0.49      115   0.33   0.49
+[VProf] Server Send Networking   0.06   0.26     7270   0.21   0.31     0.28   0.50      115   0.28   0.50
+[VProf]             Networking   0.05   0.24     7272   0.18   0.28     0.28   0.84      115   0.28   0.84
+[VProf]    Server PackEntities   0.04   0.19     7270   0.15   0.21     0.20   0.44      115   0.20   0.44
+[VProf]     InterpolationLatch   0.03   0.15     7270   0.12   0.16     0.15   0.19      115   0.15   0.19
+[VProf]                  Magic   0.00   0.00      330   0.13   0.37     0.00   0.29       40   0.21   0.38
+[VProf]
+[VProf] VProfLite stopped.
+
+
+---
+
+2025-02-28-18:01:25
+
+[VProf]
+[VProf] -- Performance report --
+[VProf] Summary of 24769 frames and 115 1-second intervals.  (2062 frames excluded from analysis.)
+[VProf] FPS: Avg=217.8, P1=91.1
+[VProf]
+[VProf]                         All frames         Active frames       1s max (all)      1s max (active)
+[VProf]                           Avg    P99        N    Avg    P99      P50    P95        N    P50    P95
+[VProf] ---------------------- ------ ------   ------ ------ ------   ------ ------   ------ ------ ------
+[VProf]             FrameTotal   4.59  10.98    24769   4.59  10.98    10.17  49.78      115  10.17  49.78
+[VProf]       Client Rendering   2.16   3.29    24769   2.16   3.29     3.29  39.09      115   3.29  39.09
+[VProf]         Frame Boundary   1.55   2.67    24769   1.55   2.67     2.61  38.24      115   2.61  38.24
+[VProf]      Client Simulation   0.85   2.57    24769   0.85   2.57     2.28   7.54      115   2.28   7.54
+[VProf]      Server Simulation   0.66   3.24     7241   2.26   3.47     3.17   9.40      115   3.17   9.40
+[VProf]    ClientSimulateFrame   0.58   1.23    24769   0.58   1.23     1.10   2.78      115   1.10   2.78
+[VProf]            Server Game   0.52   2.56     7241   1.80   3.02     2.58   8.52      115   2.58   8.52
+[VProf]             Prediction   0.43   1.87    24769   0.43   1.87     1.64   3.26      115   1.64   3.26
+[VProf]    Client Input/Output   0.30   1.07    24769   0.30   1.07     1.15   2.87      115   1.15   2.87
+[VProf]     ClientSimulateTick   0.27   1.42     7241   0.92   1.64     1.30   3.85      115   1.30   3.85
+[VProf]           UserCommands   0.23   1.17     7241   0.78   1.51     1.21   2.77      115   1.21   2.77
+[VProf]             PanoramaUI   0.20   0.46    24769   0.20   0.46     0.42   0.97      115   0.42   0.97
+[VProf]                    HUD   0.20   0.34    24769   0.20   0.34     0.40   1.36      115   0.40   1.36
+[VProf]            Unaccounted   0.19   0.62    24769   0.19   0.62     0.62   1.03      115   0.62   1.03
+[VProf]          Interpolation   0.13   0.30    24769   0.13   0.30     0.31   0.56      115   0.31   0.56
+[VProf]        LowLatencySleep   0.10   1.61    24769   0.10   1.61     0.13   1.99      115   0.13   1.99
+[VProf]       Client_Animation   0.10   0.48     7241   0.33   0.60     0.49   1.15      115   0.49   1.15
+[VProf]                   NPCs   0.08   0.44     7241   0.29   0.59     0.48   1.31      115   0.48   1.31
+[VProf]       Server Animation   0.08   0.40     7241   0.26   0.44     0.42   1.30      115   0.42   1.30
+[VProf] Server Send Networking   0.07   0.34     7241   0.24   0.38     0.38   0.60      115   0.38   0.60
+[VProf]             Networking   0.07   0.37     7243   0.23   0.45     0.47   1.26      115   0.47   1.26
+[VProf]    Server PackEntities   0.05   0.23     7241   0.17   0.33     0.26   0.46      115   0.26   0.46
+[VProf]     InterpolationLatch   0.04   0.21     7241   0.13   0.25     0.24   0.44      115   0.24   0.44
+[VProf]   ClientSimulate_Think   0.03   0.21     7241   0.11   0.30     0.26   0.57      115   0.26   0.57
+[VProf]                  Magic   0.00   0.00      329   0.16   0.47     0.00   0.39       41   0.27   0.48
+[VProf]             FileSystem   0.00   0.00        4   0.12   0.22     0.00   0.00        4   0.09   0.20
+[VProf]         SoundOperators   0.00   0.00        1   0.11   0.11     0.00   0.00        1   0.11   0.11
+[VProf]
+[VProf] VProfLite stopped.
+[BuildSparseShadowTree] CSparseShadowTreeGameSystem::GameShutdown
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 15.427800ms
