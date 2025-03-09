@@ -1,7 +1,7 @@
 # Read and display the ASCII art from the file
 Clear-Host
 
-Get-Content -Path "F:\GitHub\cs-configs\launchers\cs2.txt" | ForEach-Object { Write-Output $_ }
+Get-Content -Path "F:\GitHub\cs-configs\cs2\launchers\cs2.txt" | ForEach-Object { Write-Output $_ }
 # Write-Host "      $(Get-Date -Format 'dddd, dd\/MM\/yyyy HH:mm')"
 # Write-Output "`n"
 
@@ -33,7 +33,7 @@ function New-MenuItem([String]$DisplayName, [ScriptBlock]$Script) {
 
 # Function to auto accept
 function AutoAccept {
-    $aaScriptPath = "F:\GitHub\cs-configs\aa\aa.bat"
+    $aaScriptPath = "F:\GitHub\cs-configs\cs2\aa\aa.bat"
     Clear-Host
     Start-Process $aaScriptPath
 }
@@ -54,7 +54,7 @@ function SetResolution {
 
 # Function to launch Counter-Strike 2
 function LaunchCS2 {
-    SetScreenResolution 1440 1080
+    # SetScreenResolution 1440 1080
     $CS2SteamURL = "steam://launch/730"
     Start-Process $CS2SteamURL
     Clear-Host
@@ -118,6 +118,100 @@ function CloseCS2 {
     return
 }
 
+# 30 = set
+# 255 = not set
+function GetCS2Affinity {
+    $processName = "cs2"
+    while ($true) {
+        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+        if ($null -ne $process) {
+            $affinity = $process.ProcessorAffinity
+
+            if ($affinity -eq 30) {
+                Clear-Host
+                Write-Host "`nAffinity for $processName has been set correctly.`n" -ForegroundColor Green
+            }
+            elseif ($affinity -eq 255) {
+                Clear-Host
+                Write-Host "`nAffinity for $processName has not been set.`n" -ForegroundColor Red
+            }
+            return
+        }
+        else {
+            Clear-Host
+            Write-Host "`nCounter-Strike 2 is not running.`n" -ForegroundColor Yellow
+        }
+        return
+    }
+}
+
+# Function to set CS2 affinity
+function SetCS2Affinity {
+    $processName = "cs2"
+    while ($true) {
+        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+        if ($null -ne $process) {
+            $process.PriorityClass = 'High'
+            $process.ProcessorAffinity = 0x000000000000001E
+            Clear-Host
+            Write-Host "`nProcess priority and affinity set for $processName." -ForegroundColor Green
+            break
+        }
+        else {
+            # Clear-Host
+            Write-Host "`nCounter-Strike 2 process did not initiate in time." -ForegroundColor Yellow
+        }
+        return
+    }
+}
+
+# 30 = set
+# 255 = not set
+function GetSteamAffinity {
+    $processName = "steam"
+    while ($true) {
+        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+        if ($null -ne $process) {
+            $affinity = $process.ProcessorAffinity
+
+            if ($affinity -eq 30) {
+                Clear-Host
+                Write-Host "`nAffinity for $processName has been set correctly.`n" -ForegroundColor Green
+            }
+            elseif ($affinity -eq 255) {
+                Clear-Host
+                Write-Host "`nAffinity for $processName has not been set.`n" -ForegroundColor Red
+            }
+            return
+        }
+        else {
+            Clear-Host
+            Write-Host "`nSteam is not running.`n" -ForegroundColor Yellow
+        }
+        return
+    }
+}
+
+# Function to set CS2 affinity
+function SetSteamAffinity {
+    $processName = "steam"
+    while ($true) {
+        $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+        if ($null -ne $process) {
+            $process.PriorityClass = 'High'
+            $process.ProcessorAffinity = 0x000000000000001E
+            Clear-Host
+            Write-Host "`nProcess priority and affinity set for $processName." -ForegroundColor Green
+            break
+        }
+        else {
+            # Clear-Host
+            Write-Host "`nSteam process did not initiate in time." -ForegroundColor Yellow
+        }
+        return
+    }
+}
+
 # Function to reload the current script
 function ReloadScript {
     $scriptPath = $MyInvocation.ScriptName
@@ -125,7 +219,7 @@ function ReloadScript {
         Write-Host "Reloading script..." -ForegroundColor Cyan
         Invoke-Expression $scriptPath
         exit
-    }
+    }''
     else {
         Write-Host "Unable to determine the script path." -ForegroundColor Red
     }
@@ -140,31 +234,31 @@ function OpenLineups {
 # Function to open lineups folder
 function OpenLineupAncient {
     Clear-Host
-    Start-Process "F:\GitHub\cs-configs\lineups\cs2-lineups-ancient.png"
+    Start-Process "F:\GitHub\cs-configs\cs2\lineups\cs2-lineups-ancient.png"
     ReloadScript
 }
 
 function OpenLineupDust2 {
     Clear-Host
-    Start-Process "F:\GitHub\cs-configs\lineups\cs2-lineups-dust2.png"
+    Start-Process "F:\GitHub\cs-configs\cs2\lineups\cs2-lineups-dust2.png"
     ReloadScript
 }
 
 function OpenLineupInferno {
     Clear-Host
-    Start-Process "F:\GitHub\cs-configs\lineups\cs2-lineups-inferno.png"
+    Start-Process "F:\GitHub\cs-configs\cs2\lineups\cs2-lineups-inferno.png"
     ReloadScript
 }
 
 function OpenLineupMirage {
     Clear-Host
-    Start-Process "F:\GitHub\cs-configs\lineups\cs2-lineups-mirage.png"
+    Start-Process "F:\GitHub\cs-configs\cs2\lineups\cs2-lineups-mirage.png"
     ReloadScript
 }
 
 function OpenLineupVertigo {
     Clear-Host
-    Start-Process "F:\GitHub\cs-configs\lineups\cs2-lineups-vertigo.png"
+    Start-Process "F:\GitHub\cs-configs\cs2\lineups\cs2-lineups-vertigo.png"
     ReloadScript
 }
 
@@ -195,14 +289,16 @@ $Opts = @(
     $(New-MenuItem -DisplayName " Play CS2" -Script { LaunchCS2 }),
     $(New-MenuItem -DisplayName " Auto Accept" -Script { AutoAccept }),
     $(New-MenuItem -DisplayName " Open Lineups Menu" -Script { ShowLineupsSubMenu }),
-    $(New-MenuItem -DisplayName " Set Native Resolution" -Script { RestoreResolution }),
-    $(New-MenuItem -DisplayName " Set CS2 Resolution" -Script { SetResolution }),
     $(New-MenuItem -DisplayName " CS2 Windowed" -Script { LaunchCS2Windowed }),
     $(New-MenuItem -DisplayName " CS2 Windowed Insecure" -Script { LaunchCS2WindowedInsecure }),
-    $(New-MenuItem -DisplayName " Restart CS2" -Script { RestartCS2 }),
+    $(New-MenuItem -DisplayName " CS2 Get Affinity" -Script { GetCS2Affinity }),
+    $(New-MenuItem -DisplayName " CS2 Set Affinity" -Script { SetCS2Affinity }),
+    $(New-MenuItem -DisplayName " Steam Get Affinity" -Script { GetSteamAffinity }),
+    $(New-MenuItem -DisplayName " Steam Set Affinity" -Script { SetSteamAffinity }),
     $(Get-MenuSeparator)
-    $(New-MenuItem -DisplayName " Reload Script" -Script { ReloadScript }),
+    $(New-MenuItem -DisplayName " Restart CS2" -Script { RestartCS2 }),
     $(New-MenuItem -DisplayName " Exit CS2" -Script { CloseCS2 }),
+    $(New-MenuItem -DisplayName " Reload Script" -Script { ReloadScript }),
     $(New-MenuItem -DisplayName " Exit Script" -Script {
             break
         })

@@ -1,4 +1,4 @@
-# python update-aliashelp.py ..\cs2\configs\aliases.cfg ..\cs2\configs\aliashelp.cfg
+# python update-aliashelp.py ..\configs\aliases.cfg ..\configs\aliashelp.cfg
 
 import os
 import sys
