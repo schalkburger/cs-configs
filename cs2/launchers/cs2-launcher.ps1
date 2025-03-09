@@ -291,8 +291,6 @@ $Opts = @(
     $(New-MenuItem -DisplayName " Open Lineups Menu" -Script { ShowLineupsSubMenu }),
     $(New-MenuItem -DisplayName " CS2 Windowed" -Script { LaunchCS2Windowed }),
     $(New-MenuItem -DisplayName " CS2 Windowed Insecure" -Script { LaunchCS2WindowedInsecure }),
-    $(New-MenuItem -DisplayName " CS2 Get Affinity" -Script { GetCS2Affinity }),
-    $(New-MenuItem -DisplayName " CS2 Set Affinity" -Script { SetCS2Affinity }),
     $(New-MenuItem -DisplayName " Steam Get Affinity" -Script { GetSteamAffinity }),
     $(New-MenuItem -DisplayName " Steam Set Affinity" -Script { SetSteamAffinity }),
     $(Get-MenuSeparator)
