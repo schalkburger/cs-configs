@@ -1,127 +1,121 @@
-# Darkharden's autoexec
+# Darkharden's CS2 Configs
 
-<!--
-My Profile: https://steamcommunity.com/id/darkharden
-Original Gist: https://gist.github.com/schalkburger/a19cd40175ee026f69d0c033b37d58b1
--->
-
-## Installation
-
-**Copy** `autoexec.cfg` to the following path:
-`C:\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\cfg`
-
-Alternatively, create a symbolink link to this repository's `autoexec.cfg` for auto updating.
-
-## Launch options
-
-`-novid +exec autoexec`
-
-## Other Settings
-
-### Video Settings
-
-Video resolution forced to `1280x960` with [HotKey Resolution Changer](https://m.majorgeeks.com/files/details/hrc_%C3%82%E2%80%93_hotkey_resolution_changer.html) or [SetScreenResolution](https://github.com/gurnec/SetScreenResolution)
-
-`CTRL + ALT + NUMPAD 2` for `1280x960` and `CTRL + ALT + NUMPAD 9` for `1920x1080`
-
-| Setting                          | Value           |
-| -------------------------------- | --------------- |
-| Aspect Ratio                     | Widescreen 16:9 |
-| Resolution                       | 1920x1080       |
-| Display Mode                     | Fullscreen      |
-| Global Shadow Quality            | High            |
-| Model / Texture Detail           | High            |
-| Texture Streaming                | Disabled        |
-| Effect Detail                    | High            |
-| Shader Detail                    | Very High       |
-| Boost Player Contrast            | Enabled         |
-| Multicore Rendering              | Enabled         |
-| Multisampling Anti-Aliasing Mode | 4x MSAA         |
-| FXAA Anti-Aliasing               | Disabled        |
-| Texture Filtering Mode           | Trilinear       |
-
-To use the **Video Settings**, copy [video.txt](video.txt) to the following directory and set it to `Read-only`.
-
-`C:\Steam\userdata\949198321\730\local\cfg`
-
-### Mouse Settings
-
-| Setting | Value |
-| ------- | ----- |
-| Win Sen | 6/11  |
-| DPI     | 450   |
-| Sens    | 1.75  |
-
-## Crosshair
-
-```bash
-cl_crosshairalpha "200"
-cl_crosshaircolor "2"
-cl_crosshairdot "0"
-cl_crosshairgap "-3"
-cl_crosshairsize "1.5"
-cl_crosshairstyle "4"
-cl_crosshairusealpha "1"
-cl_crosshairthickness "0.5"
-cl_crosshair_sniper_width "1"
-cl_crosshair_outlinethickness "1"
-cl_crosshair_drawoutline "1"
 ```
-
-## Binds
-
-```bash
-    +--------+ +--------+ +--------+ +--------+
-    |        | |        | |        | |        |
-    | NUM    | |        | |        | | DEFUSE |
-    | LOCK   | |        | |        | |  KIT   |
-    |        | |        | |        | |        |
-    +--------+ +--------+ +--------+ +--------+
-    +--------+ +--------+ +--------+ +--------+
-    |        | |        | |        | |        |
-    | XM1014 | | MAG 7  | | SCOUT  | |        |
-    |        | |        | |        | |        |
-    +--------+ +--------+ +--------+ |        |
-    +--------+ +--------+ +--------+ |  AWP   |
-    |        | |        | |        | |        |
-    |  MAC10 | |   MP5  | |   P90  | |        |
-    |  MP9   | |        | |        | |        |
-    |        | |        | |        | |        |
-    +--------+ +--------+ +--------+ +--------+
-    +--------+ +--------+ +--------+ +--------+
-    |        | |        | |        | |        |
-    |  P250  | |  TEC9  | | DEAGLE | |        |
-    |        | |        | |        | |   AK   |
-    +--------+ +--------+ +--------+ |   M4   |
-    +-------------------+ +--------+ |        |
-    |                   | |        | |        |
-    |       GALIL       | | SG553  | |        |
-    |       FAMAS       | |  AUG   | |        |
-    |                   | |        | |        |
-    +-------------------+ +--------+ +--------+
-
-          +--------+ +--------+ +--------+
-          |        | |        | |        |
-          |  VEST  | | FLASH  | | MOLLY  |
-          |        | |        | |        |
-          +------------------------------+
-          +--------+ +--------+ +--------+
-          |        | |        | |        |
-          |  VEST+ | | SMOKE  | |   HE   |
-          |  HELM  | |        | |  NADE  |
-          |        | |        | |        |
-          +--------+ +--------+ +--------+
-
-                    +--------+
-                    | BUY &  |
-                    | DROP   |
-                    | AWP    |
-                    |        |
-                    +--------+
-          +--------+ +--------+ +--------+
-          | BUY &  | | BUY &  | | BUY &  |
-          | DROP   | | DROP   | | DROP   |
-          | GALIL  | | AK/M4  | | SG/AUG |
-          |        | |        | |        |
-          +--------+ +--------+ +--------+
+┣ 📂aa
+┃ ┣ 📜aa.bat
+┃ ┣ 📜aa.ps1
+┃ ┣ 📜aa.py
+┃ ┣ 📜accept.png
+┃ ┗ 📜ban.png
+┣ 📂benchmarks
+┃ ┣ 📜cs2-benchmark-2025-03-10-2142.log
+┃ ┗ 📜cs2-benchmark-2025-03-10-2210.log
+┣ 📂configs
+┃ ┣ 📂multi
+┃ ┃ ┣ 📜-attack.cfg
+┃ ┃ ┣ 📜-attack2.cfg
+┃ ┃ ┣ 📜-back.cfg
+┃ ┃ ┣ 📜-duck.cfg
+┃ ┃ ┣ 📜-forward.cfg
+┃ ┃ ┣ 📜-jump.cfg
+┃ ┃ ┣ 📜-left.cfg
+┃ ┃ ┣ 📜-right.cfg
+┃ ┃ ┣ 📜-use.cfg
+┃ ┃ ┣ 📜-walk.cfg
+┃ ┃ ┣ 📜+attack.cfg
+┃ ┃ ┣ 📜+back.cfg
+┃ ┃ ┣ 📜+duck.cfg
+┃ ┃ ┣ 📜+forward.cfg
+┃ ┃ ┣ 📜+jump.cfg
+┃ ┃ ┣ 📜+left.cfg
+┃ ┃ ┣ 📜+right.cfg
+┃ ┃ ┣ 📜+use.cfg
+┃ ┃ ┣ 📜+walk.cfg
+┃ ┃ ┣ 📜JT.cfg
+┃ ┃ ┗ 📜WJT.cfg
+┃ ┣ 📂prefire
+┃ ┃ ┣ 📜prefire.cfg
+┃ ┃ ┗ 📜prefirenuke.cfg
+┃ ┣ 📂rainbowcrosshair
+┃ ┃ ┣ 📜rainbow.cfg
+┃ ┃ ┣ 📜rainbow1.cfg
+┃ ┃ ┣ 📜rainbow2.cfg
+┃ ┃ ┣ 📜rainbow3.cfg
+┃ ┃ ┣ 📜rainbow4.cfg
+┃ ┃ ┣ 📜rainbow5.cfg
+┃ ┃ ┗ 📜rainbow6.cfg
+┃ ┣ 📜aliases.cfg
+┃ ┣ 📜aliashelp.cfg
+┃ ┣ 📜audio.cfg
+┃ ┣ 📜autostop.cfg
+┃ ┣ 📜bells.cfg
+┃ ┣ 📜binds.cfg
+┃ ┣ 📜bindsdefault.cfg
+┃ ┣ 📜bindshelp.cfg
+┃ ┣ 📜bots.cfg
+┃ ┣ 📜counterstrafing.cfg
+┃ ┣ 📜crosshair.cfg
+┃ ┣ 📜crosshairgamble.cfg
+┃ ┣ 📜deagle.cfg
+┃ ┣ 📜defaultmovement.cfg
+┃ ┣ 📜demo.cfg
+┃ ┣ 📜fakeopenings.cfg
+┃ ┣ 📜flashsound.cfg
+┃ ┣ 📜general.cfg
+┃ ┣ 📜greenscreen.cfg
+┃ ┣ 📜hud.cfg
+┃ ┣ 📜knives.cfg
+┃ ┣ 📜mouse.cfg
+┃ ┣ 📜nades.cfg
+┃ ┣ 📜network.cfg
+┃ ┣ 📜nightmare.cfg
+┃ ┣ 📜nightmare2.cfg
+┃ ┣ 📜nullmovement.cfg
+┃ ┣ 📜practice.cfg
+┃ ┣ 📜rainbowcrosshair.cfg
+┃ ┣ 📜resetsounds.cfg
+┃ ┣ 📜scripts.cfg
+┃ ┣ 📜skinpreview.cfg
+┃ ┣ 📜spawn.cfg
+┃ ┣ 📜tap.cfg
+┃ ┣ 📜trollcrosshair.cfg
+┃ ┣ 📜warmup.cfg
+┃ ┣ 📜warmupnades.cfg
+┃ ┗ 📜warmupnores.cfg
+┣ 📂launchers
+┃ ┣ 📜cs2-launcher.ps1
+┃ ┣ 📜cs2-movewindow.py
+┃ ┣ 📜cs2-restarter.bat
+┃ ┣ 📜cs2-set-affinity.ps1
+┃ ┣ 📜cs2-stop.bat
+┃ ┣ 📜cs2-windowed.txt
+┃ ┣ 📜cs2.bat
+┃ ┣ 📜cs2.txt
+┃ ┣ 📜Set Screen Resolution 1440x1080.bat
+┃ ┣ 📜Set Screen Resolution Native.bat
+┃ ┣ 📜set-steam-affinity.ps1
+┃ ┣ 📜steam-restarter.bat
+┃ ┗ 📜steam.bat
+┣ 📂lineups
+┃ ┣ 📜cs2-lineups-ancient.png
+┃ ┣ 📜cs2-lineups-dust2.png
+┃ ┣ 📜cs2-lineups-inferno.png
+┃ ┣ 📜cs2-lineups-mirage.png
+┃ ┗ 📜cs2-lineups-vertigo.png
+┣ 📂misc
+┃ ┣ 📂fonts
+┃ ┃ ┣ 📜fontmapping.cfg
+┃ ┃ ┗ 📜fonts.conf
+┃ ┣ 📜cs2-config-directories.txt
+┃ ┣ 📜launch-options.txt
+┃ ┣ 📜open-cfg-folder.cmd
+┃ ┣ 📜porting-csgo-map-to-cs2.txt
+┃ ┗ 📜update-aliashelp.py
+┣ 📂video
+┃ ┣ 📂1440x1080
+┃ ┃ ┗ 📜cs2_video.txt
+┃ ┣ 📂1920x1080
+┃ ┃ ┗ 📜cs2_video.txt
+┃ ┗ 📜cs2_video.txt
+┗ 📜autoexec.cfg
 ```
